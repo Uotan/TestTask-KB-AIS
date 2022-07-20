@@ -16,5 +16,10 @@ namespace TestTask
         {
             InitializeComponent();
         }
+
+        private void MainWorkSpace_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
