@@ -76,7 +76,7 @@ namespace TestTask
 
         private void btnToReaders_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FormReaders());
         }
 
         private void btnToAuthors_Click(object sender, EventArgs e)
