@@ -20,7 +20,7 @@ namespace TestTask.Controls
 
         public List<Reader> GetReaders()
         {
-            var _connection = new SqliteConnection("Data Source=data\\data.db");
+            var _connection = new SqliteConnection("DataSource=data\\data.db");
 
 
             List<Reader> readers = new List<Reader>();
