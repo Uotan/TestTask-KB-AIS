@@ -17,14 +17,5 @@ namespace TestTask.Forms
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(textBox1.Text))
-            {
-                pictureBox1.Image = Image.FromFile(textBox1.Text);
-            }
-            //MessageBox.Show(DateTime.Now.ToString());
-        }
     }
 }

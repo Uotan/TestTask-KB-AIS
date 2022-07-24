@@ -14,8 +14,14 @@ namespace TestTask.Models
         public string RegDate { get; set; }
         public string FullName { get; set; }
         public string Birthday { get; set; }
+        private string imagePathString { get; set; }
+
         public string ImagePath
         {
+            get
+            {
+                return imagePathString;
+            }
             set
             {
                 if (!String.IsNullOrEmpty(value))
@@ -23,6 +29,7 @@ namespace TestTask.Models
                     if (File.Exists(value))
                     {
                         ReaderPicture = Image.FromFile(value);
+                        imagePathString = value;
                     }
                 }
             }
