@@ -81,17 +81,18 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 729);
+            this.panel1.Size = new System.Drawing.Size(292, 897);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::TestTask.Properties.Resources.image_category;
-            this.pictureBox7.Location = new System.Drawing.Point(14, 509);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.pictureBox7.Location = new System.Drawing.Point(19, 626);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox7.Size = new System.Drawing.Size(67, 53);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 13;
             this.pictureBox7.TabStop = false;
@@ -106,10 +107,10 @@
             this.btnToCategories.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnToCategories.ForeColor = System.Drawing.Color.Black;
             this.btnToCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToCategories.Location = new System.Drawing.Point(68, 504);
-            this.btnToCategories.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.btnToCategories.Location = new System.Drawing.Point(91, 620);
+            this.btnToCategories.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnToCategories.Name = "btnToCategories";
-            this.btnToCategories.Size = new System.Drawing.Size(151, 49);
+            this.btnToCategories.Size = new System.Drawing.Size(201, 60);
             this.btnToCategories.TabIndex = 14;
             this.btnToCategories.Text = "Категории";
             this.btnToCategories.UseVisualStyleBackColor = false;
@@ -118,10 +119,10 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::TestTask.Properties.Resources.image_tag;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 444);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.pictureBox6.Location = new System.Drawing.Point(16, 546);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox6.Size = new System.Drawing.Size(67, 53);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 11;
             this.pictureBox6.TabStop = false;
@@ -136,10 +137,10 @@
             this.btnToTags.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnToTags.ForeColor = System.Drawing.Color.Black;
             this.btnToTags.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToTags.Location = new System.Drawing.Point(66, 439);
-            this.btnToTags.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.btnToTags.Location = new System.Drawing.Point(88, 540);
+            this.btnToTags.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnToTags.Name = "btnToTags";
-            this.btnToTags.Size = new System.Drawing.Size(151, 49);
+            this.btnToTags.Size = new System.Drawing.Size(201, 60);
             this.btnToTags.TabIndex = 12;
             this.btnToTags.Text = "Теги";
             this.btnToTags.UseVisualStyleBackColor = false;
@@ -148,10 +149,10 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::TestTask.Properties.Resources.image_shelf;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 379);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.pictureBox5.Location = new System.Drawing.Point(16, 466);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox5.Size = new System.Drawing.Size(67, 53);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
@@ -166,10 +167,10 @@
             this.btnToShelves.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnToShelves.ForeColor = System.Drawing.Color.Black;
             this.btnToShelves.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToShelves.Location = new System.Drawing.Point(66, 374);
-            this.btnToShelves.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.btnToShelves.Location = new System.Drawing.Point(88, 460);
+            this.btnToShelves.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnToShelves.Name = "btnToShelves";
-            this.btnToShelves.Size = new System.Drawing.Size(151, 49);
+            this.btnToShelves.Size = new System.Drawing.Size(201, 60);
             this.btnToShelves.TabIndex = 10;
             this.btnToShelves.Text = "Полки";
             this.btnToShelves.UseVisualStyleBackColor = false;
@@ -178,10 +179,10 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::TestTask.Properties.Resources.image_author;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 314);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.pictureBox4.Location = new System.Drawing.Point(16, 386);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox4.Size = new System.Drawing.Size(67, 53);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
@@ -196,10 +197,10 @@
             this.btnToAuthors.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnToAuthors.ForeColor = System.Drawing.Color.Black;
             this.btnToAuthors.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToAuthors.Location = new System.Drawing.Point(66, 309);
-            this.btnToAuthors.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.btnToAuthors.Location = new System.Drawing.Point(88, 380);
+            this.btnToAuthors.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnToAuthors.Name = "btnToAuthors";
-            this.btnToAuthors.Size = new System.Drawing.Size(151, 49);
+            this.btnToAuthors.Size = new System.Drawing.Size(201, 60);
             this.btnToAuthors.TabIndex = 8;
             this.btnToAuthors.Text = "Авторы";
             this.btnToAuthors.UseVisualStyleBackColor = false;
@@ -208,10 +209,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::TestTask.Properties.Resources.image_readers;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 249);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.pictureBox3.Location = new System.Drawing.Point(16, 306);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox3.Size = new System.Drawing.Size(67, 53);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
@@ -226,10 +227,10 @@
             this.btnToReaders.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnToReaders.ForeColor = System.Drawing.Color.Black;
             this.btnToReaders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToReaders.Location = new System.Drawing.Point(66, 244);
-            this.btnToReaders.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.btnToReaders.Location = new System.Drawing.Point(88, 300);
+            this.btnToReaders.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnToReaders.Name = "btnToReaders";
-            this.btnToReaders.Size = new System.Drawing.Size(151, 49);
+            this.btnToReaders.Size = new System.Drawing.Size(201, 60);
             this.btnToReaders.TabIndex = 6;
             this.btnToReaders.Text = "Читатели";
             this.btnToReaders.UseVisualStyleBackColor = false;
@@ -238,10 +239,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TestTask.Properties.Resources.image_book;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 184);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.pictureBox2.Location = new System.Drawing.Point(16, 226);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox2.Size = new System.Drawing.Size(67, 53);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -256,10 +257,10 @@
             this.btnToBooks.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnToBooks.ForeColor = System.Drawing.Color.Black;
             this.btnToBooks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToBooks.Location = new System.Drawing.Point(66, 179);
-            this.btnToBooks.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.btnToBooks.Location = new System.Drawing.Point(88, 220);
+            this.btnToBooks.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnToBooks.Name = "btnToBooks";
-            this.btnToBooks.Size = new System.Drawing.Size(151, 49);
+            this.btnToBooks.Size = new System.Drawing.Size(201, 60);
             this.btnToBooks.TabIndex = 4;
             this.btnToBooks.Text = "Книги";
             this.btnToBooks.UseVisualStyleBackColor = false;
@@ -268,10 +269,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TestTask.Properties.Resources.image_journal;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 119);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 146);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 43);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -286,10 +287,10 @@
             this.btnToJournal.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnToJournal.ForeColor = System.Drawing.Color.Black;
             this.btnToJournal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToJournal.Location = new System.Drawing.Point(66, 114);
-            this.btnToJournal.Margin = new System.Windows.Forms.Padding(2, 8, 2, 8);
+            this.btnToJournal.Location = new System.Drawing.Point(88, 140);
+            this.btnToJournal.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnToJournal.Name = "btnToJournal";
-            this.btnToJournal.Size = new System.Drawing.Size(151, 49);
+            this.btnToJournal.Size = new System.Drawing.Size(201, 60);
             this.btnToJournal.TabIndex = 2;
             this.btnToJournal.Text = "Журнал";
             this.btnToJournal.UseVisualStyleBackColor = false;
@@ -302,19 +303,18 @@
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(219, 109);
+            this.panel2.Size = new System.Drawing.Size(292, 134);
             this.panel2.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(33, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(44, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 33);
+            this.label1.Size = new System.Drawing.Size(186, 41);
             this.label1.TabIndex = 2;
             this.label1.Text = "Библиотека";
             // 
@@ -324,10 +324,10 @@
             this.panel3.Controls.Add(this.labelMainTitle);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(219, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(292, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 109);
+            this.panel3.Size = new System.Drawing.Size(1333, 134);
             this.panel3.TabIndex = 3;
             // 
             // labelMainTitle
@@ -335,33 +335,35 @@
             this.labelMainTitle.AutoSize = true;
             this.labelMainTitle.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelMainTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(166)))), ((int)(((byte)(157)))));
-            this.labelMainTitle.Location = new System.Drawing.Point(40, 24);
-            this.labelMainTitle.Margin = new System.Windows.Forms.Padding(38, 0, 2, 0);
+            this.labelMainTitle.Location = new System.Drawing.Point(53, 30);
+            this.labelMainTitle.Margin = new System.Windows.Forms.Padding(51, 0, 3, 0);
             this.labelMainTitle.Name = "labelMainTitle";
-            this.labelMainTitle.Size = new System.Drawing.Size(0, 58);
+            this.labelMainTitle.Size = new System.Drawing.Size(0, 72);
             this.labelMainTitle.TabIndex = 2;
             // 
             // panelWorkSpace
             // 
             this.panelWorkSpace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelWorkSpace.Location = new System.Drawing.Point(219, 109);
-            this.panelWorkSpace.Margin = new System.Windows.Forms.Padding(2);
+            this.panelWorkSpace.Location = new System.Drawing.Point(292, 134);
+            this.panelWorkSpace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWorkSpace.Name = "panelWorkSpace";
-            this.panelWorkSpace.Size = new System.Drawing.Size(1000, 620);
+            this.panelWorkSpace.Size = new System.Drawing.Size(1333, 763);
             this.panelWorkSpace.TabIndex = 4;
             // 
             // MainWorkSpace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 729);
+            this.ClientSize = new System.Drawing.Size(1625, 897);
             this.Controls.Add(this.panelWorkSpace);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1235, 768);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1641, 934);
             this.Name = "MainWorkSpace";
             this.Text = "Библиотека";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainWorkSpace_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

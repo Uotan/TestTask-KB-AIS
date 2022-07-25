@@ -16,29 +16,43 @@ namespace TestTask.Forms
 {
     public partial class FormReaders : Form
     {
-        SQLiteController _providerSQL;
+        ReaderControllerSQL _providerSQL;
         string _selectedImageFile = null;
         string _selectedReaderId = null;
         List<Reader> _readersList;
         public FormReaders()
         {
             InitializeComponent();
-            _providerSQL = new SQLiteController(@"data\data.db"); 
+            _providerSQL = new ReaderControllerSQL(@"data\data.db"); 
         }
 
         private void FormReaders_Load(object sender, EventArgs e)
         {
-            ShowReaders(null);
+            ShowReaders(null,null);
         }
 
-        void ShowReaders(string _readerPartOfName)
+        void ShowReaders(string _readerPartOfName,string _readerID)
         {
-            _readersList = _providerSQL.GetReaders(_readerPartOfName);
-            dataGridReaders.DataSource = _readersList;
-            dataGridReaders.RowTemplate.Height = 100;
-            dataGridReaders.AutoResizeColumns();
-            dataGridReaders.AutoResizeRows();
+            if (String.IsNullOrEmpty(_readerPartOfName)&&_readerID!=null)
+            {
+                _readersList = _providerSQL.GetReadersByID(_readerID);
+                dataGridReaders.DataSource = _readersList;
+                dataGridReaders.RowTemplate.Height = 100;
+                dataGridReaders.AutoResizeColumns();
+                dataGridReaders.AutoResizeRows();
+            }
+            else
+            {
+                _readersList = _providerSQL.GetReaders(_readerPartOfName);
+                dataGridReaders.DataSource = _readersList;
+                dataGridReaders.RowTemplate.Height = 100;
+                dataGridReaders.AutoResizeColumns();
+                dataGridReaders.AutoResizeRows();
+            }
+            
         }
+
+
 
         private void btnSelectImage_Click(object sender, EventArgs e)
         {
@@ -78,7 +92,7 @@ namespace TestTask.Forms
             tbNameReader.Text = null;
             tbFilterReader.Text = null;
 
-            ShowReaders(null);
+            ShowReaders(null,null);
             //MessageBox.Show(dateBirthPicker.Value.ToString());
         }
 
@@ -92,7 +106,8 @@ namespace TestTask.Forms
         {
             try
             {
-                ShowReaders(tbFilterReader.Text);
+                tbFilterByID.Text = null;
+                ShowReaders(tbFilterReader.Text,null);
             }
             catch (Exception ex)
             {
@@ -115,6 +130,10 @@ namespace TestTask.Forms
         {
             try
             {
+                btnSelectImage.Enabled = false;
+                btnClearSelectedImage.Enabled = false;
+
+
                 btnAddReader.Enabled = false;
                 int index = e.RowIndex;// get the Row Index
                 DataGridViewRow selectedRow = dataGridReaders.Rows[index];
@@ -126,6 +145,7 @@ namespace TestTask.Forms
                 //MessageBox.Show(selectedRow.Cells[3].ToString().Trim());
 
                 DateTime _seaderRegDate = DateTime.Parse(selectedRow.Cells[3].Value.ToString());
+
                 dateBirthPicker.Value = _seaderRegDate;
 
                 labelReaderId.Text = "ID: "+selectedRow.Cells[0].Value.ToString();
@@ -152,13 +172,24 @@ namespace TestTask.Forms
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        void ClearFields()
         {
+            _selectedReaderId = null;
+            _selectedImageFile = null;
+
+            btnSelectImage.Enabled = true;
+            btnClearSelectedImage.Enabled = true;
+
             btnAddReader.Enabled = true;
             tbNameReader.Text = null;
             labelReaderId.Text = null;
             dateBirthPicker.Value = DateTime.Now;
             pictBoxNewReaderImage.Image = null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
 
         private void btnDeleteReader_Click(object sender, EventArgs e)
@@ -175,12 +206,60 @@ namespace TestTask.Forms
                 return;
             }
             _providerSQL.DeleteReader(_selectedReaderId);
-            ShowReaders(null);
+            ShowReaders(null, null);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        
 
+        private void btnSaveEdits_Click(object sender, EventArgs e)
+        {
+            pictBoxNewReaderImage.Image = null;
+            if (!String.IsNullOrEmpty(_selectedReaderId))
+            {
+
+                _providerSQL.UpdateReaderData(_selectedReaderId,dateBirthPicker.Value.ToString(),tbNameReader.Text);
+
+                //if (String.IsNullOrEmpty(_selectedImageFile))
+                //{
+                //    Image imageFile = Image.FromFile(_selectedImageFile);
+                //    Bitmap bitmap = ImageResizer.ResizeImage(imageFile, 128, 128);
+
+                //    if (File.Exists("data\\readers_img\\reader_" + _selectedReaderId + ".jpg"))
+                //    {
+                //        File.Delete("data\\readers_img\\reader_" + _selectedReaderId + ".jpg");
+                //    }
+
+                //    bitmap.Save(@"data\readers_img\reader_" + _selectedReaderId + ".jpg");
+                //    _providerSQL.UpdateReaderImage(_selectedReaderId, "data\\readers_img\\reader_" + _selectedReaderId + ".jpg");
+                //}
+            }
+
+            ClearFields();
+
+            ShowReaders(null, null);
+        }
+
+        private void tbFilterByID_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbFilterByID.Text))
+            {
+                ShowReaders(null, null);
+            }
+            else
+            {
+                tbFilterReader.Text = null;
+                ShowReaders(null, tbFilterByID.Text);
+
+            }
+            
+        }
+
+        private void tbFilterByID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

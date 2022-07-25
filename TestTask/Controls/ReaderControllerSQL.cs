@@ -8,14 +8,58 @@ using TestTask.Models;
 
 namespace TestTask.Controls
 {
-    public class SQLiteController
+    public class ReaderControllerSQL
     {
         string _path;
         //SqliteConnection connection;
-        public SQLiteController(string path)
+        public ReaderControllerSQL(string path)
         {
             _path = path;
             //connection = new SqliteConnection(_path);
+        }
+
+
+
+        public List<Reader> GetReadersByID(string _readerID)
+        {
+
+
+            var _connection = new SQLiteConnection("DataSource=" + _path);
+
+
+            List<Reader> readers = new List<Reader>();
+
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = _connection;
+
+            command.CommandText = "SELECT * FROM readers where id=@readerId";
+
+
+
+            SQLiteParameter readerNameParam = new SQLiteParameter("@readerId", _readerID);
+            command.Parameters.Add(readerNameParam);
+
+            _connection.Open();
+
+            using (SQLiteDataReader readerSQL = command.ExecuteReader())
+            {
+                if (readerSQL.HasRows)
+                {
+                    while (readerSQL.Read())
+                    {
+                        Reader r = new Reader();
+                        r.Id = readerSQL.GetValue(0).ToString();
+                        r.RegDate = readerSQL.GetValue(1).ToString();
+                        r.FullName = readerSQL.GetValue(2).ToString();
+                        r.Birthday = readerSQL.GetValue(3).ToString();
+                        r.ImagePath = readerSQL.GetValue(4).ToString();
+                        readers.Add(r);
+                    }
+                }
+            }
+
+            _connection.Close();
+            return readers;
         }
 
         public List<Reader> GetReaders(string _readerName)
@@ -44,6 +88,8 @@ namespace TestTask.Controls
                 command.CommandText = "SELECT * FROM readers where fullname LIKE \'%"+_readerName+"%\'";
                 
             }
+
+
 
             //SQLiteParameter readerNameParam = new SQLiteParameter("@reader_name", _readerName);
             //command.Parameters.Add(readerNameParam);
@@ -143,7 +189,7 @@ namespace TestTask.Controls
             _connection.Close();
         }
 
-        public void UpdateReaderData(string _id, string _birthDay, string _fullName, string _imagePath)
+        public void UpdateReaderData(string _id, string _birthDay, string _fullName)
         {
             var _connection = new SQLiteConnection("DataSource=" + _path);
 
@@ -151,13 +197,13 @@ namespace TestTask.Controls
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = _connection;
 
-            command.CommandText = "UPDATE readers SET image_path=@imagePath, fullname=@fullName, birthday=@birthDay WHERE id=@id";
+            command.CommandText = "UPDATE readers SET fullname=@fullName, birthday=@birthDay WHERE id=@id";
 
             SQLiteParameter idParam = new SQLiteParameter("@id", _id);
             command.Parameters.Add(idParam);
 
-            SQLiteParameter imagePathParam = new SQLiteParameter("@imagePath", _imagePath);
-            command.Parameters.Add(imagePathParam);
+            //SQLiteParameter imagePathParam = new SQLiteParameter("@imagePath", _imagePath);
+            //command.Parameters.Add(imagePathParam);
 
             SQLiteParameter birthDayParam = new SQLiteParameter("@birthDay", _birthDay);
             command.Parameters.Add(birthDayParam);

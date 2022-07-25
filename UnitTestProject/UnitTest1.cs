@@ -10,7 +10,9 @@ namespace UnitTestProject
     [TestClass]
     public class UnitTest1
     {
-        string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
+        //Указываем путь к локальной базе
+        //string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
+        string _sqlBasePath = @"C:\Projects\TestTask-KB-AIS\TestTask\bin\Debug\data\data.db";
 
 
         [TestMethod]
@@ -27,7 +29,7 @@ namespace UnitTestProject
         public void TestUpdateImage()
         {
             //тест проходит
-            SQLiteController sQLiteController = new SQLiteController(_sqlBasePath);
+            ReaderControllerSQL sQLiteController = new ReaderControllerSQL(_sqlBasePath);
             sQLiteController.UpdateReaderImage("24", @"A:\Projects\TestTask\TestTask\bin\Debug\data\readers_img\reader_24.jpg");
         }
 
@@ -35,7 +37,7 @@ namespace UnitTestProject
         public void TestSlecerReadersLike()
         {
             //порядок
-            SQLiteController sQLiteController = new SQLiteController(_sqlBasePath);
+            ReaderControllerSQL sQLiteController = new ReaderControllerSQL(_sqlBasePath);
             List<Reader> _listReaders = sQLiteController.GetReaders("у");
             foreach (var item in _listReaders)
             {
@@ -48,7 +50,7 @@ namespace UnitTestProject
         public void TestDeleteReader()
         {
             //порядок
-            SQLiteController sQLiteController = new SQLiteController(_sqlBasePath);
+            ReaderControllerSQL sQLiteController = new ReaderControllerSQL(_sqlBasePath);
             sQLiteController.DeleteReader("32");
         }
 
@@ -57,8 +59,38 @@ namespace UnitTestProject
         public void TestUpdateReaderData()
         {
             //порядок
-            SQLiteController sQLiteController = new SQLiteController(_sqlBasePath);
-            sQLiteController.UpdateReaderData("36","zxc","zxc","zxc");
+            ReaderControllerSQL sQLiteController = new ReaderControllerSQL(_sqlBasePath);
+            sQLiteController.UpdateReaderData("36", "05.02.1988 0:00:00", "zxc");
+        }
+
+        [TestMethod]
+        public void TestGetCategories()
+        {
+            //порядок
+            CategoriesControllerSQL sQLiteController = new CategoriesControllerSQL(_sqlBasePath);
+            List<Category> _categories = sQLiteController.GetCategories(null);
+            foreach (var item in _categories)
+            {
+                Console.WriteLine(item.Name);
+            }
+            Console.WriteLine("\n");
+            _categories = sQLiteController.GetCategories("с");
+            foreach (var item in _categories)
+            {
+                Console.WriteLine(item.Name);
+            }
+        }
+
+
+        [TestMethod]
+        public void TestInsertCategory()
+        {
+            //порядок
+            CategoriesControllerSQL sQLiteController = new CategoriesControllerSQL(_sqlBasePath);
+            var _idInsertedCategory = sQLiteController.AddCategory("проверочная");
+            
+            Console.WriteLine("Идентификатор объекта: " + _idInsertedCategory.ToString());
+
         }
     }
 }

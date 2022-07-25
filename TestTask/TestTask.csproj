@@ -118,8 +118,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CategoriesControllerSQL.cs" />
     <Compile Include="Controls\ImageResizer.cs" />
-    <Compile Include="Controls\SQLiteController.cs" />
+    <Compile Include="Controls\ReaderControllerSQL.cs" />
+    <Compile Include="Forms\FormCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCategories.Designer.cs">
+      <DependentUpon>FormCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormJournal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +145,13 @@
     <Compile Include="MainWorkSpace.Designer.cs">
       <DependentUpon>MainWorkSpace.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Reader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormCategories.resx">
+      <DependentUpon>FormCategories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormJournal.resx">
       <DependentUpon>FormJournal.cs</DependentUpon>
     </EmbeddedResource>
