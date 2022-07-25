@@ -8,27 +8,27 @@ using TestTask.Models;
 
 namespace TestTask.Controls
 {
-    public class CategoriesControllerSQL
+    public class TagControllerSQL
     {
         string _path;
-        public CategoriesControllerSQL(string _path)
+        public TagControllerSQL(string _path)
         {
             this._path = _path;
         }
 
-        public List<Category> GetCategories()
+        public List<Tag> GetTags()
         {
 
 
             var _connection = new SQLiteConnection("DataSource=" + _path);
 
 
-            List<Category> _categoriesList = new List<Category>();
+            List<Tag> _tagsList = new List<Tag>();
 
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = _connection;
 
-            command.CommandText = "Select * From categories";
+            command.CommandText = "Select * From tags";
 
 
             _connection.Open();
@@ -39,29 +39,29 @@ namespace TestTask.Controls
                 {
                     while (readerSQL.Read())
                     {
-                        Category category = new Category();
-                        category.Id = readerSQL.GetValue(0).ToString();
-                        category.Name = readerSQL.GetValue(1).ToString();
-                        _categoriesList.Add(category);
+                        Tag tag = new Tag();
+                        tag.Id = readerSQL.GetValue(0).ToString();
+                        tag.Name = readerSQL.GetValue(1).ToString();
+                        _tagsList.Add(tag);
                     }
                 }
             }
 
             _connection.Close();
-            return _categoriesList;
+            return _tagsList;
         }
 
-        public object AddCategory(string _nameCategory)
+        public object AddTag(string _nameTag)
         {
             var _connection = new SQLiteConnection("DataSource=" + _path);
 
 
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = _connection;
-            command.CommandText = "INSERT INTO categories (name_category) VALUES (@name_category);SELECT last_insert_rowid();";
+            command.CommandText = "INSERT INTO tags (name_tag) VALUES (@name_tag);SELECT last_insert_rowid();";
 
-            SQLiteParameter reg_dateParam = new SQLiteParameter("@name_category", _nameCategory);
-            command.Parameters.Add(reg_dateParam);
+            SQLiteParameter tagNameParam = new SQLiteParameter("@name_tag", _nameTag);
+            command.Parameters.Add(tagNameParam);
 
             _connection.Open();
 
@@ -72,7 +72,7 @@ namespace TestTask.Controls
             return avgInsertedReader;
         }
 
-        public void DeleteCategory(string _id)
+        public void DeleteTag(string _id)
         {
             var _connection = new SQLiteConnection("DataSource=" + _path);
 
@@ -80,7 +80,7 @@ namespace TestTask.Controls
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = _connection;
 
-            command.CommandText = "DELETE FROM categories where id=@id";
+            command.CommandText = "DELETE FROM tags where id=@id";
 
             SQLiteParameter idParam = new SQLiteParameter("@id", _id);
             command.Parameters.Add(idParam);

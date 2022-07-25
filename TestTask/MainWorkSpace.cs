@@ -86,7 +86,7 @@ namespace TestTask
 
         private void btnToTags_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FormTags());
         }
 
         private void btnToCategories_Click(object sender, EventArgs e)

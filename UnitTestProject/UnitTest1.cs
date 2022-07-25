@@ -11,8 +11,8 @@ namespace UnitTestProject
     public class UnitTest1
     {
         //Указываем путь к локальной базе
-        //string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
-        string _sqlBasePath = @"C:\Projects\TestTask-KB-AIS\TestTask\bin\Debug\data\data.db";
+        string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
+        //string _sqlBasePath = @"C:\Projects\TestTask-KB-AIS\TestTask\bin\Debug\data\data.db";
 
 
         [TestMethod]
@@ -68,17 +68,17 @@ namespace UnitTestProject
         {
             //порядок
             CategoriesControllerSQL sQLiteController = new CategoriesControllerSQL(_sqlBasePath);
-            List<Category> _categories = sQLiteController.GetCategories(null);
+            List<Category> _categories = sQLiteController.GetCategories();
             foreach (var item in _categories)
             {
                 Console.WriteLine(item.Name);
             }
             Console.WriteLine("\n");
-            _categories = sQLiteController.GetCategories("с");
-            foreach (var item in _categories)
-            {
-                Console.WriteLine(item.Name);
-            }
+            //_categories = sQLiteController.GetCategories("с");
+            //foreach (var item in _categories)
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
         }
 
 
@@ -91,6 +91,15 @@ namespace UnitTestProject
             
             Console.WriteLine("Идентификатор объекта: " + _idInsertedCategory.ToString());
 
+        }
+
+
+        [TestMethod]
+        public void TestDeleteCategory()
+        {
+            //порядок
+            CategoriesControllerSQL sQLiteController = new CategoriesControllerSQL(_sqlBasePath);
+            sQLiteController.DeleteCategory("12");
         }
     }
 }

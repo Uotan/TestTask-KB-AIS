@@ -26,32 +26,18 @@ namespace TestTask.Forms
 
         private void FormCategories_Load(object sender, EventArgs e)
         {
-            ShowCategories(null,null);
+            ShowCategories();
         }
 
 
-        /// <summary>
-        /// Передай нулевые параметры, чтобы получить список всех категорий
-        /// </summary>
-        /// <param name="_categoryPartOfNAme"></param>
-        void ShowCategories(string _categoryPartOfNAme, string _categoryID)
+        
+        void ShowCategories()
         {
-            if (String.IsNullOrEmpty(_categoryPartOfNAme) && _selectedCategoryId != null)
-            {
-                _categoriesList = _providerSQL.GetCategories(_selectedCategoryId);
-                dataGridCategories.DataSource = _categoriesList;
-                dataGridCategories.RowTemplate.Height = 30;
-                dataGridCategories.AutoResizeColumns();
-                dataGridCategories.AutoResizeRows();
-            }
-            else
-            {
-                _categoriesList = _providerSQL.GetCategories(_categoryPartOfNAme);
-                dataGridCategories.DataSource = _categoriesList;
-                dataGridCategories.RowTemplate.Height = 30;
-                dataGridCategories.AutoResizeColumns();
-                dataGridCategories.AutoResizeRows();
-            }
+            _categoriesList = _providerSQL.GetCategories();
+            dataGridCategories.DataSource = _categoriesList;
+            dataGridCategories.RowTemplate.Height = 30;
+            dataGridCategories.AutoResizeColumns();
+            dataGridCategories.AutoResizeRows();
 
         }
 
@@ -69,10 +55,7 @@ namespace TestTask.Forms
 
                 _selectedCategoryId = selectedRow.Cells[0].Value.ToString();
 
-
-
-                labelID.Text = "ID: " + selectedRow.Cells[0].Value.ToString();
-                tbNameCategory.Text = selectedRow.Cells[1].Value.ToString();
+                //tbNameCategory.Text = selectedRow.Cells[1].Value.ToString();
 
             }
             catch (Exception ex)
@@ -87,8 +70,25 @@ namespace TestTask.Forms
             {
                 _providerSQL.AddCategory(tbNameCategory.Text);
                 tbNameCategory.Text = null;
-                ShowCategories(null,null);
+                ShowCategories();
             }
+        }
+
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "Удалить выбранную категорию?",
+        "Внимание",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning,
+        MessageBoxDefaultButton.Button1);
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+            _providerSQL.DeleteCategory(_selectedCategoryId);
+            ShowCategories();
         }
     }
 }
