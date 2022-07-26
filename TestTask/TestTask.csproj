@@ -118,11 +118,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AuthorControllerSQL.cs" />
     <Compile Include="Controls\CategoriesControllerSQL.cs" />
     <Compile Include="Controls\ImageResizer.cs" />
     <Compile Include="Controls\ReaderControllerSQL.cs" />
     <Compile Include="Controls\ShelfControllerSQL.cs" />
     <Compile Include="Controls\TagControllerSQL.cs" />
+    <Compile Include="Forms\FormBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBooks.Designer.cs">
+      <DependentUpon>FormBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCategories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +179,9 @@
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormBooks.resx">
+      <DependentUpon>FormBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCategories.resx">
       <DependentUpon>FormCategories.cs</DependentUpon>
     </EmbeddedResource>

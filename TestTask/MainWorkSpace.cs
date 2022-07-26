@@ -71,7 +71,7 @@ namespace TestTask
 
         private void btnToBooks_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FormBooks());
         }
 
         private void btnToReaders_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace TestTask
 
         private void btnToAuthors_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FormAuthors());
         }
 
         private void btnToTags_Click(object sender, EventArgs e)

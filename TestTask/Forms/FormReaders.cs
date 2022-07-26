@@ -58,9 +58,9 @@ namespace TestTask.Forms
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
-            // получаем выбранный файл
+
             _selectedImageFile = openFileDialog1.FileName;
-            // сохраняем текст в файл
+
             pictBoxNewReaderImage.Image = Image.FromFile(_selectedImageFile);
 
         }
@@ -81,8 +81,7 @@ namespace TestTask.Forms
                 Image imageFile = Image.FromFile(_selectedImageFile);
                 Bitmap bitmap = ImageResizer.ResizeImage(imageFile, 128, 128);
                 bitmap.Save(@"data\readers_img\reader_" + _insertedReader.ToString()+".jpg");
-                //Debug.WriteLine("[hello]"+_insertedReader);
-                //Debug.WriteLine("[hello]"+ "data\\readers_img\\reader_" + _insertedReader + ".jpg");
+
                 _providerSQL.UpdateReaderImage(_insertedReader.ToString(), "data\\readers_img\\reader_" + _insertedReader + ".jpg");
             }
             
@@ -93,7 +92,6 @@ namespace TestTask.Forms
             tbFilterReader.Text = null;
 
             ShowReaders(null,null);
-            //MessageBox.Show(dateBirthPicker.Value.ToString());
         }
 
         private void btnClearSelectedImage_Click(object sender, EventArgs e)
@@ -113,17 +111,6 @@ namespace TestTask.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-            //finally
-            //{
-            //    ShowReaders(null);
-            //} 
-            
-        }
-
-        private void dataGridReaders_SelectionChanged(object sender, EventArgs e)
-        {
-            var ses = dataGridReaders.SelectedRows;
-            //MessageBox.Show(ses[1].ToString());
         }
 
         private void dataGridReaders_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -135,23 +122,22 @@ namespace TestTask.Forms
 
 
                 btnAddReader.Enabled = false;
-                int index = e.RowIndex;// get the Row Index
+                int index = e.RowIndex;
                 DataGridViewRow selectedRow = dataGridReaders.Rows[index];
-
-                //MessageBox.Show(selectedRow.Cells[2].Value.ToString());
 
                 _selectedReaderId = selectedRow.Cells[0].Value.ToString();
 
-                //MessageBox.Show(selectedRow.Cells[3].ToString().Trim());
-
                 DateTime _seaderRegDate = DateTime.Parse(selectedRow.Cells[3].Value.ToString());
+
+
+                labelNumberOfYears.Text = (DateTime.Now.Year - _seaderRegDate.Year).ToString()+" лет(года)";
 
                 dateBirthPicker.Value = _seaderRegDate;
 
                 labelReaderId.Text = "ID: "+selectedRow.Cells[0].Value.ToString();
                 tbNameReader.Text = selectedRow.Cells[2].Value.ToString();
                 Reader _currentReader = (Reader)_readersList.Where(x => x.Id == selectedRow.Cells[0].Value.ToString()).FirstOrDefault();
-                //MessageBox.Show(_currentReader.imagePathString);
+
                 if (String.IsNullOrEmpty(_currentReader.ImagePath))
                 {
                     pictBoxNewReaderImage.Image = null;
@@ -179,6 +165,8 @@ namespace TestTask.Forms
 
             btnSelectImage.Enabled = true;
             btnClearSelectedImage.Enabled = true;
+
+            labelNumberOfYears.Text = null;
 
             btnAddReader.Enabled = true;
             tbNameReader.Text = null;
@@ -216,22 +204,7 @@ namespace TestTask.Forms
             pictBoxNewReaderImage.Image = null;
             if (!String.IsNullOrEmpty(_selectedReaderId))
             {
-
                 _providerSQL.UpdateReaderData(_selectedReaderId,dateBirthPicker.Value.ToString(),tbNameReader.Text);
-
-                //if (String.IsNullOrEmpty(_selectedImageFile))
-                //{
-                //    Image imageFile = Image.FromFile(_selectedImageFile);
-                //    Bitmap bitmap = ImageResizer.ResizeImage(imageFile, 128, 128);
-
-                //    if (File.Exists("data\\readers_img\\reader_" + _selectedReaderId + ".jpg"))
-                //    {
-                //        File.Delete("data\\readers_img\\reader_" + _selectedReaderId + ".jpg");
-                //    }
-
-                //    bitmap.Save(@"data\readers_img\reader_" + _selectedReaderId + ".jpg");
-                //    _providerSQL.UpdateReaderImage(_selectedReaderId, "data\\readers_img\\reader_" + _selectedReaderId + ".jpg");
-                //}
             }
 
             ClearFields();
