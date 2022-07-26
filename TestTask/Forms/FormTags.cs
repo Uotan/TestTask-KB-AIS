@@ -38,5 +38,56 @@ namespace TestTask.Forms
             dataGridTags.AutoResizeRows();
 
         }
+
+        private void dataGridTags_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+
+
+                //btnAddTag.Enabled = false;
+
+                int index = e.RowIndex;// get the Row Index
+                DataGridViewRow selectedRow = dataGridTags.Rows[index];
+
+
+                _selectedTagId = selectedRow.Cells[0].Value.ToString();
+
+                //tbNameCategory.Text = selectedRow.Cells[1].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAddTag_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tbNameTag.Text))
+            {
+                _providerSQL.AddTag(tbNameTag.Text);
+                tbNameTag.Text = null;
+                ShowTags();
+            }
+        }
+
+        private void btnDeleteTag_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "Удалить выбранный тэг?",
+        "Внимание",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning,
+        MessageBoxDefaultButton.Button1);
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+            _providerSQL.DeleteTag(_selectedTagId);
+            ShowTags();
+        }
     }
 }

@@ -28,58 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDeleteCategory = new System.Windows.Forms.Button();
-            this.btnAddCAtegory = new System.Windows.Forms.Button();
+            this.btnDeleteTag = new System.Windows.Forms.Button();
+            this.btnAddTag = new System.Windows.Forms.Button();
             this.labelTagName = new System.Windows.Forms.Label();
-            this.tbNameCategory = new System.Windows.Forms.TextBox();
+            this.tbNameTag = new System.Windows.Forms.TextBox();
             this.dataGridTags = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTags)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnDeleteCategory
+            // btnDeleteTag
             // 
-            this.btnDeleteCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.btnDeleteCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDeleteCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDeleteCategory.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDeleteCategory.Location = new System.Drawing.Point(525, 52);
-            this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(152, 23);
-            this.btnDeleteCategory.TabIndex = 23;
-            this.btnDeleteCategory.Text = "Удалить запись";
-            this.btnDeleteCategory.UseVisualStyleBackColor = false;
+            this.btnDeleteTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.btnDeleteTag.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteTag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeleteTag.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteTag.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDeleteTag.Location = new System.Drawing.Point(700, 64);
+            this.btnDeleteTag.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteTag.Name = "btnDeleteTag";
+            this.btnDeleteTag.Size = new System.Drawing.Size(203, 28);
+            this.btnDeleteTag.TabIndex = 23;
+            this.btnDeleteTag.Text = "Удалить запись";
+            this.btnDeleteTag.UseVisualStyleBackColor = false;
+            this.btnDeleteTag.Click += new System.EventHandler(this.btnDeleteTag_Click);
             // 
-            // btnAddCAtegory
+            // btnAddTag
             // 
-            this.btnAddCAtegory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(126)))), ((int)(((byte)(213)))));
-            this.btnAddCAtegory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCAtegory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddCAtegory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddCAtegory.Location = new System.Drawing.Point(347, 52);
-            this.btnAddCAtegory.Name = "btnAddCAtegory";
-            this.btnAddCAtegory.Size = new System.Drawing.Size(152, 23);
-            this.btnAddCAtegory.TabIndex = 22;
-            this.btnAddCAtegory.Text = "Добавить тэг\r\n";
-            this.btnAddCAtegory.UseVisualStyleBackColor = false;
+            this.btnAddTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(126)))), ((int)(((byte)(213)))));
+            this.btnAddTag.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddTag.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddTag.Location = new System.Drawing.Point(463, 64);
+            this.btnAddTag.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddTag.Name = "btnAddTag";
+            this.btnAddTag.Size = new System.Drawing.Size(203, 28);
+            this.btnAddTag.TabIndex = 22;
+            this.btnAddTag.Text = "Добавить тэг\r\n";
+            this.btnAddTag.UseVisualStyleBackColor = false;
+            this.btnAddTag.Click += new System.EventHandler(this.btnAddTag_Click);
             // 
             // labelTagName
             // 
             this.labelTagName.AutoSize = true;
             this.labelTagName.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTagName.Location = new System.Drawing.Point(18, 30);
+            this.labelTagName.Location = new System.Drawing.Point(24, 37);
+            this.labelTagName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTagName.Name = "labelTagName";
-            this.labelTagName.Size = new System.Drawing.Size(26, 18);
+            this.labelTagName.Size = new System.Drawing.Size(32, 22);
             this.labelTagName.TabIndex = 21;
             this.labelTagName.Text = "Тэг";
             // 
-            // tbNameCategory
+            // tbNameTag
             // 
-            this.tbNameCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbNameCategory.Location = new System.Drawing.Point(21, 52);
-            this.tbNameCategory.Name = "tbNameCategory";
-            this.tbNameCategory.Size = new System.Drawing.Size(287, 25);
-            this.tbNameCategory.TabIndex = 20;
+            this.tbNameTag.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbNameTag.Location = new System.Drawing.Point(28, 64);
+            this.tbNameTag.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNameTag.Name = "tbNameTag";
+            this.tbNameTag.Size = new System.Drawing.Size(381, 29);
+            this.tbNameTag.TabIndex = 20;
             // 
             // dataGridTags
             // 
@@ -90,27 +96,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridTags.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridTags.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridTags.Location = new System.Drawing.Point(12, 103);
+            this.dataGridTags.Location = new System.Drawing.Point(16, 127);
+            this.dataGridTags.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridTags.MultiSelect = false;
             this.dataGridTags.Name = "dataGridTags";
             this.dataGridTags.ReadOnly = true;
             this.dataGridTags.RowHeadersWidth = 51;
-            this.dataGridTags.Size = new System.Drawing.Size(960, 490);
+            this.dataGridTags.Size = new System.Drawing.Size(1280, 603);
             this.dataGridTags.TabIndex = 19;
+            this.dataGridTags.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTags_CellClick);
             // 
             // FormTags
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 623);
-            this.Controls.Add(this.btnDeleteCategory);
-            this.Controls.Add(this.btnAddCAtegory);
+            this.ClientSize = new System.Drawing.Size(1312, 767);
+            this.Controls.Add(this.btnDeleteTag);
+            this.Controls.Add(this.btnAddTag);
             this.Controls.Add(this.labelTagName);
-            this.Controls.Add(this.tbNameCategory);
+            this.Controls.Add(this.tbNameTag);
             this.Controls.Add(this.dataGridTags);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTags";
-            this.Text = "FormTags";
+            this.Text = "Тэги";
             this.Load += new System.EventHandler(this.FormTags_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTags)).EndInit();
             this.ResumeLayout(false);
@@ -120,10 +129,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnDeleteCategory;
-        private System.Windows.Forms.Button btnAddCAtegory;
+        private System.Windows.Forms.Button btnDeleteTag;
+        private System.Windows.Forms.Button btnAddTag;
         private System.Windows.Forms.Label labelTagName;
-        private System.Windows.Forms.TextBox tbNameCategory;
+        private System.Windows.Forms.TextBox tbNameTag;
         private System.Windows.Forms.DataGridView dataGridTags;
     }
 }

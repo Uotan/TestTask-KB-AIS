@@ -48,7 +48,9 @@ namespace TestTask.Forms
 
 
 
-                btnAddCAtegory.Enabled = false;
+                //btnAddCAtegory.Enabled = false;
+
+
                 int index = e.RowIndex;// get the Row Index
                 DataGridViewRow selectedRow = dataGridCategories.Rows[index];
 

@@ -96,7 +96,7 @@ namespace TestTask
 
         private void btnToShelves_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FormShelves());
         }
     }
 }
