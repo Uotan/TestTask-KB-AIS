@@ -18,6 +18,9 @@ namespace TestTask.Forms
     {
         ReaderControllerSQL _providerSQL;
         string _selectedImageFile = null;
+        string _selectedNewImageFile = null;
+        bool isEditMode = false;
+
         string _selectedReaderId = null;
         List<Reader> _readersList;
         public FormReaders()
@@ -59,9 +62,19 @@ namespace TestTask.Forms
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
 
-            _selectedImageFile = openFileDialog1.FileName;
+            if (!isEditMode)
+            {
+                _selectedImageFile = openFileDialog1.FileName;
 
-            pictBoxNewReaderImage.Image = Image.FromFile(_selectedImageFile);
+                pictBoxNewReaderImage.Image = Image.FromFile(_selectedImageFile);
+            }
+            else
+            {
+                _selectedNewImageFile = openFileDialog1.FileName;
+
+                pictBoxNewReaderImage.Image = Image.FromFile(_selectedNewImageFile);
+            }
+            
 
         }
 
@@ -117,8 +130,8 @@ namespace TestTask.Forms
         {
             try
             {
-                btnSelectImage.Enabled = false;
-                btnClearSelectedImage.Enabled = false;
+                //btnSelectImage.Enabled = false;
+                //btnClearSelectedImage.Enabled = false;
 
 
                 btnAddReader.Enabled = false;
@@ -146,6 +159,7 @@ namespace TestTask.Forms
                 else
                 {
                     _selectedImageFile = _currentReader.ImagePath;
+                    isEditMode = true;
                     pictBoxNewReaderImage.Image = Image.FromFile(_currentReader.ImagePath);
                 }
                 
@@ -160,6 +174,10 @@ namespace TestTask.Forms
 
         void ClearFields()
         {
+            isEditMode = false;
+            _selectedNewImageFile = null;
+
+
             _selectedReaderId = null;
             _selectedImageFile = null;
 
@@ -199,13 +217,33 @@ namespace TestTask.Forms
 
         
 
-        private void btnSaveEdits_Click(object sender, EventArgs e)
+        private async void btnSaveEdits_Click(object sender, EventArgs e)
         {
-            pictBoxNewReaderImage.Image = null;
+            
             if (!String.IsNullOrEmpty(_selectedReaderId))
             {
                 _providerSQL.UpdateReaderData(_selectedReaderId,dateBirthPicker.Value.ToString(),tbNameReader.Text);
             }
+            if (!String.IsNullOrEmpty(_selectedNewImageFile))
+            {
+                pictBoxNewReaderImage.Image = null;
+                _readersList.Clear();
+                dataGridReaders.DataSource = null;
+
+                await Task.Delay(200);
+
+                Image imageFile = Image.FromFile(_selectedNewImageFile);
+                Bitmap bitmap = ImageResizer.ResizeImage(imageFile, 128, 128);
+                Debug.WriteLine(_selectedReaderId.ToString());
+                Debug.WriteLine(_selectedNewImageFile);
+                //File.Delete("data\\readers_img\\reader_" + _selectedReaderId + ".jpg");
+                bitmap.Save(@"data\readers_img\reader_" + _selectedReaderId.ToString() + "(1).jpg");
+
+                _providerSQL.UpdateReaderImage(_selectedReaderId.ToString(), "data\\readers_img\\reader_" + _selectedReaderId + "(1).jpg");
+            }
+
+            
+
 
             ClearFields();
 

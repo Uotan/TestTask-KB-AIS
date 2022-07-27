@@ -20,8 +20,10 @@ namespace TestTask.Forms
         BookCategAndTagController _providerBookCategAndTag;
         AuthorControllerSQL _providerAuthors;
         ShelfControllerSQL _providerShelves;
-        List<Book> _listBooks;
 
+        List<Book> _listBooks;
+        Book currentSelectedBook;
+        string selectedBookId;
         string pickedImagePath = null;
 
 
@@ -135,6 +137,64 @@ namespace TestTask.Forms
         {
             pickedImagePath = null;
             pictbxBookImage.Image = null;
+        }
+
+        private void btnAddBook_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbNameBook.Text))
+            {
+                MessageBox.Show("Название книги пустое");
+                return;
+            }
+
+            Author _pickedAuthor = (Author)cmbxAuthors.SelectedItem;
+            Shelf _pickedShelf = (Shelf)cmbxShelves.SelectedItem;
+
+            object _insertedBookId = _providerBooks.AddBook(tbNameBook.Text, _pickedAuthor.Id, _pickedShelf.Id);
+            MessageBox.Show($"Идентификатор добавленного объекта {_insertedBookId}");
+
+            if (!String.IsNullOrEmpty(pickedImagePath))
+            {
+                Image imageFile = Image.FromFile(pickedImagePath);
+                Bitmap bitmap = ImageResizer.ResizeImage(imageFile, 82, 128);
+                bitmap.Save(@"data\books_img\book_" + _insertedBookId.ToString() + ".jpg");
+
+                _providerBooks.UpdateBookImage(_insertedBookId.ToString(), "data\\books_img\\book_" + _insertedBookId + ".jpg");
+            }
+
+
+            pickedImagePath = null;
+            pictbxBookImage.Image = null;
+            tbNameBook.Text = null;
+
+            ShowData();
+        }
+
+        private void dataGridBooks_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //btnSelectImage.Enabled = false;
+                //btnClearSelectedImage.Enabled = false;
+
+
+                btnAddBook.Enabled = false;
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridBooks.Rows[index];
+
+                selectedBookId = selectedRow.Cells[0].Value.ToString();
+
+                Book _selectedBookObject = _providerBooks.GetBook(selectedBookId);
+                //labelNumberOfYears.Text = (DateTime.Now.Year - _seaderRegDate.Year).ToString() + " лет(года)";
+
+                cmbxAuthors.SelectedItem = cmbxAuthors.Items.Cast<Author>().Where(i => i.Name == _selectedBookObject.Author).Single();
+                Author _pickedAuthor = (Author)cmbxAuthors.SelectedItem;
+                MessageBox.Show(_pickedAuthor.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
