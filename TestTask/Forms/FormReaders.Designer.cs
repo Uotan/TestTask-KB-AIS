@@ -58,40 +58,46 @@
             this.dataGridReaders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridReaders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridReaders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridReaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReaders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridReaders.Location = new System.Drawing.Point(12, 308);
+            this.dataGridReaders.Location = new System.Drawing.Point(16, 379);
+            this.dataGridReaders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridReaders.MultiSelect = false;
             this.dataGridReaders.Name = "dataGridReaders";
             this.dataGridReaders.ReadOnly = true;
             this.dataGridReaders.RowHeadersWidth = 51;
-            this.dataGridReaders.Size = new System.Drawing.Size(960, 303);
+            this.dataGridReaders.Size = new System.Drawing.Size(1280, 373);
             this.dataGridReaders.TabIndex = 0;
             this.dataGridReaders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridReaders_CellClick);
             // 
             // dateBirthPicker
             // 
             this.dateBirthPicker.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateBirthPicker.Location = new System.Drawing.Point(21, 128);
+            this.dateBirthPicker.Location = new System.Drawing.Point(28, 158);
+            this.dateBirthPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateBirthPicker.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateBirthPicker.Name = "dateBirthPicker";
-            this.dateBirthPicker.Size = new System.Drawing.Size(287, 25);
+            this.dateBirthPicker.Size = new System.Drawing.Size(381, 29);
             this.dateBirthPicker.TabIndex = 1;
             // 
             // tbNameReader
             // 
             this.tbNameReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbNameReader.Location = new System.Drawing.Point(21, 70);
+            this.tbNameReader.Location = new System.Drawing.Point(28, 86);
+            this.tbNameReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNameReader.Name = "tbNameReader";
-            this.tbNameReader.Size = new System.Drawing.Size(287, 25);
+            this.tbNameReader.Size = new System.Drawing.Size(381, 29);
             this.tbNameReader.TabIndex = 2;
             // 
             // btnSelectImage
             // 
             this.btnSelectImage.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSelectImage.Location = new System.Drawing.Point(348, 179);
+            this.btnSelectImage.Location = new System.Drawing.Point(464, 220);
+            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelectImage.Name = "btnSelectImage";
-            this.btnSelectImage.Size = new System.Drawing.Size(150, 23);
+            this.btnSelectImage.Size = new System.Drawing.Size(200, 28);
             this.btnSelectImage.TabIndex = 3;
             this.btnSelectImage.Text = "Выбрать изображение";
             this.btnSelectImage.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@
             // pictBoxNewReaderImage
             // 
             this.pictBoxNewReaderImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictBoxNewReaderImage.Location = new System.Drawing.Point(348, 23);
+            this.pictBoxNewReaderImage.Location = new System.Drawing.Point(464, 28);
+            this.pictBoxNewReaderImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictBoxNewReaderImage.Name = "pictBoxNewReaderImage";
-            this.pictBoxNewReaderImage.Size = new System.Drawing.Size(150, 150);
+            this.pictBoxNewReaderImage.Size = new System.Drawing.Size(199, 184);
             this.pictBoxNewReaderImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictBoxNewReaderImage.TabIndex = 4;
             this.pictBoxNewReaderImage.TabStop = false;
@@ -111,18 +118,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(20, 49);
+            this.label1.Location = new System.Drawing.Point(27, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 18);
+            this.label1.Size = new System.Drawing.Size(104, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Полное имя";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 112);
+            this.label2.Location = new System.Drawing.Point(24, 138);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.Size = new System.Drawing.Size(106, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Дата рождения";
             // 
@@ -137,9 +146,10 @@
             this.btnAddReader.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddReader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddReader.Location = new System.Drawing.Point(524, 27);
+            this.btnAddReader.Location = new System.Drawing.Point(699, 33);
+            this.btnAddReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddReader.Name = "btnAddReader";
-            this.btnAddReader.Size = new System.Drawing.Size(152, 23);
+            this.btnAddReader.Size = new System.Drawing.Size(203, 28);
             this.btnAddReader.TabIndex = 7;
             this.btnAddReader.Text = "Добавить читателя";
             this.btnAddReader.UseVisualStyleBackColor = false;
@@ -148,9 +158,10 @@
             // btnClearSelectedImage
             // 
             this.btnClearSelectedImage.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClearSelectedImage.Location = new System.Drawing.Point(348, 208);
+            this.btnClearSelectedImage.Location = new System.Drawing.Point(464, 256);
+            this.btnClearSelectedImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClearSelectedImage.Name = "btnClearSelectedImage";
-            this.btnClearSelectedImage.Size = new System.Drawing.Size(150, 23);
+            this.btnClearSelectedImage.Size = new System.Drawing.Size(200, 28);
             this.btnClearSelectedImage.TabIndex = 8;
             this.btnClearSelectedImage.Text = "Очистить";
             this.btnClearSelectedImage.UseVisualStyleBackColor = true;
@@ -162,9 +173,10 @@
             this.btnSaveEdits.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveEdits.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSaveEdits.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSaveEdits.Location = new System.Drawing.Point(524, 56);
+            this.btnSaveEdits.Location = new System.Drawing.Point(699, 69);
+            this.btnSaveEdits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaveEdits.Name = "btnSaveEdits";
-            this.btnSaveEdits.Size = new System.Drawing.Size(152, 23);
+            this.btnSaveEdits.Size = new System.Drawing.Size(203, 28);
             this.btnSaveEdits.TabIndex = 9;
             this.btnSaveEdits.Text = "Сохранить изменения";
             this.btnSaveEdits.UseVisualStyleBackColor = false;
@@ -177,9 +189,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(524, 119);
+            this.button2.Location = new System.Drawing.Point(699, 146);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 23);
+            this.button2.Size = new System.Drawing.Size(203, 28);
             this.button2.TabIndex = 10;
             this.button2.Text = "Сбросить";
             this.button2.UseVisualStyleBackColor = false;
@@ -192,9 +205,10 @@
             this.btnDeleteReader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeleteReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeleteReader.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDeleteReader.Location = new System.Drawing.Point(524, 148);
+            this.btnDeleteReader.Location = new System.Drawing.Point(699, 182);
+            this.btnDeleteReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteReader.Name = "btnDeleteReader";
-            this.btnDeleteReader.Size = new System.Drawing.Size(152, 23);
+            this.btnDeleteReader.Size = new System.Drawing.Size(203, 28);
             this.btnDeleteReader.TabIndex = 11;
             this.btnDeleteReader.Text = "Удалить запись";
             this.btnDeleteReader.UseVisualStyleBackColor = false;
@@ -204,27 +218,30 @@
             // 
             this.labelReaderId.AutoSize = true;
             this.labelReaderId.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelReaderId.Location = new System.Drawing.Point(20, 23);
+            this.labelReaderId.Location = new System.Drawing.Point(27, 28);
+            this.labelReaderId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReaderId.Name = "labelReaderId";
-            this.labelReaderId.Size = new System.Drawing.Size(0, 18);
+            this.labelReaderId.Size = new System.Drawing.Size(0, 22);
             this.labelReaderId.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(154, 254);
+            this.label3.Location = new System.Drawing.Point(205, 313);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 18);
+            this.label3.Size = new System.Drawing.Size(143, 22);
             this.label3.TabIndex = 14;
             this.label3.Text = "Фильтр по имени";
             // 
             // tbFilterReader
             // 
             this.tbFilterReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbFilterReader.Location = new System.Drawing.Point(157, 275);
+            this.tbFilterReader.Location = new System.Drawing.Point(209, 338);
+            this.tbFilterReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbFilterReader.Name = "tbFilterReader";
-            this.tbFilterReader.Size = new System.Drawing.Size(287, 25);
+            this.tbFilterReader.Size = new System.Drawing.Size(381, 29);
             this.tbFilterReader.TabIndex = 13;
             this.tbFilterReader.TextChanged += new System.EventHandler(this.tbFilterReader_TextChanged);
             // 
@@ -232,19 +249,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(10, 254);
+            this.label4.Location = new System.Drawing.Point(13, 313);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 18);
+            this.label4.Size = new System.Drawing.Size(108, 22);
             this.label4.TabIndex = 16;
             this.label4.Text = "Фильтр по ID";
             // 
             // tbFilterByID
             // 
             this.tbFilterByID.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbFilterByID.Location = new System.Drawing.Point(13, 275);
+            this.tbFilterByID.Location = new System.Drawing.Point(17, 338);
+            this.tbFilterByID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbFilterByID.MaxLength = 5;
             this.tbFilterByID.Name = "tbFilterByID";
-            this.tbFilterByID.Size = new System.Drawing.Size(124, 25);
+            this.tbFilterByID.Size = new System.Drawing.Size(164, 29);
             this.tbFilterByID.TabIndex = 15;
             this.tbFilterByID.TextChanged += new System.EventHandler(this.tbFilterByID_TextChanged);
             this.tbFilterByID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilterByID_KeyPress);
@@ -252,16 +271,17 @@
             // labelNumberOfYears
             // 
             this.labelNumberOfYears.AutoSize = true;
-            this.labelNumberOfYears.Location = new System.Drawing.Point(20, 160);
+            this.labelNumberOfYears.Location = new System.Drawing.Point(27, 197);
+            this.labelNumberOfYears.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumberOfYears.Name = "labelNumberOfYears";
-            this.labelNumberOfYears.Size = new System.Drawing.Size(0, 13);
+            this.labelNumberOfYears.Size = new System.Drawing.Size(0, 16);
             this.labelNumberOfYears.TabIndex = 17;
             // 
             // FormReaders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 623);
+            this.ClientSize = new System.Drawing.Size(1312, 767);
             this.Controls.Add(this.labelNumberOfYears);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbFilterByID);
@@ -281,7 +301,7 @@
             this.Controls.Add(this.dateBirthPicker);
             this.Controls.Add(this.dataGridReaders);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormReaders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Читатели";

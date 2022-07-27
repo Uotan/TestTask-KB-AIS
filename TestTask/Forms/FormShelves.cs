@@ -33,9 +33,9 @@ namespace TestTask.Forms
         {
             _tagsList = _providerSQL.GetShelves();
             dataGridShelves.DataSource = _tagsList;
-            dataGridShelves.RowTemplate.Height = 30;
-            dataGridShelves.AutoResizeColumns();
-            dataGridShelves.AutoResizeRows();
+            //dataGridShelves.RowTemplate.Height = 30;
+            //dataGridShelves.AutoResizeColumns();
+            //dataGridShelves.AutoResizeRows();
 
         }
 

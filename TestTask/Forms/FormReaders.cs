@@ -45,9 +45,9 @@ namespace TestTask.Forms
             {
                 _readersList = _providerSQL.GetReaders(_readerPartOfName);
                 dataGridReaders.DataSource = _readersList;
-                dataGridReaders.RowTemplate.Height = 100;
-                dataGridReaders.AutoResizeColumns();
-                dataGridReaders.AutoResizeRows();
+                //dataGridReaders.RowTemplate.Height = 100;
+                //dataGridReaders.AutoResizeColumns();
+                //dataGridReaders.AutoResizeRows();
             }
             
         }

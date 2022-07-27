@@ -35,9 +35,9 @@ namespace TestTask.Forms
         {
             _categoriesList = _providerSQL.GetCategories();
             dataGridCategories.DataSource = _categoriesList;
-            dataGridCategories.RowTemplate.Height = 30;
-            dataGridCategories.AutoResizeColumns();
-            dataGridCategories.AutoResizeRows();
+            //dataGridCategories.RowTemplate.Height = 30;
+            //dataGridCategories.AutoResizeColumns();
+            //dataGridCategories.AutoResizeRows();
 
         }
 

@@ -81,7 +81,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(292, 897);
             this.panel1.TabIndex = 1;
@@ -327,7 +327,7 @@
             this.panel3.Location = new System.Drawing.Point(292, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1333, 134);
+            this.panel3.Size = new System.Drawing.Size(1506, 134);
             this.panel3.TabIndex = 3;
             // 
             // labelMainTitle
@@ -347,20 +347,20 @@
             this.panelWorkSpace.Location = new System.Drawing.Point(292, 134);
             this.panelWorkSpace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWorkSpace.Name = "panelWorkSpace";
-            this.panelWorkSpace.Size = new System.Drawing.Size(1333, 763);
+            this.panelWorkSpace.Size = new System.Drawing.Size(1506, 763);
             this.panelWorkSpace.TabIndex = 4;
             // 
             // MainWorkSpace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1625, 897);
+            this.ClientSize = new System.Drawing.Size(1798, 897);
             this.Controls.Add(this.panelWorkSpace);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1641, 934);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1816, 944);
             this.Name = "MainWorkSpace";
             this.Text = "Библиотека";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

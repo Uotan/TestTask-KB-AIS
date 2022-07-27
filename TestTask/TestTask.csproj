@@ -118,6 +118,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BookCategAndTagController.cs" />
+    <Compile Include="Controls\BookControllerSQL.cs" />
     <Compile Include="Controls\AuthorControllerSQL.cs" />
     <Compile Include="Controls\CategoriesControllerSQL.cs" />
     <Compile Include="Controls\ImageResizer.cs" />
@@ -173,10 +175,13 @@
       <DependentUpon>MainWorkSpace.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryTpBook.cs" />
     <Compile Include="Models\Reader.cs" />
     <Compile Include="Models\Shelf.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagToBookRef.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormBooks.resx">

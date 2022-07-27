@@ -11,8 +11,8 @@ namespace UnitTestProject
     public class UnitTest1
     {
         //Указываем путь к локальной базе
-        string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
-        //string _sqlBasePath = @"C:\Projects\TestTask-KB-AIS\TestTask\bin\Debug\data\data.db";
+        //string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
+        string _sqlBasePath = @"C:\Projects\TestTask-KB-AIS\TestTask\bin\Debug\data\data.db";
 
 
         [TestMethod]
@@ -100,6 +100,20 @@ namespace UnitTestProject
             //порядок
             CategoriesControllerSQL sQLiteController = new CategoriesControllerSQL(_sqlBasePath);
             sQLiteController.DeleteCategory("12");
+        }
+
+
+
+        [TestMethod]
+        public void TestGetTagsOfBook()
+        {
+            //порядок
+            BookCategAndTagController sQLiteController = new BookCategAndTagController(_sqlBasePath);
+            List <TagToBookRef> _tagList = sQLiteController.GetTagsOfBook("1");
+            foreach (TagToBookRef tag in _tagList)
+            {
+                Console.WriteLine(tag.TagName);
+            }
         }
     }
 }

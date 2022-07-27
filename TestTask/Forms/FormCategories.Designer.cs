@@ -43,9 +43,10 @@
             this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeleteCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeleteCategory.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDeleteCategory.Location = new System.Drawing.Point(525, 63);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(700, 78);
+            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(152, 23);
+            this.btnDeleteCategory.Size = new System.Drawing.Size(203, 28);
             this.btnDeleteCategory.TabIndex = 18;
             this.btnDeleteCategory.Text = "Удалить запись";
             this.btnDeleteCategory.UseVisualStyleBackColor = false;
@@ -57,9 +58,10 @@
             this.btnAddCAtegory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCAtegory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddCAtegory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddCAtegory.Location = new System.Drawing.Point(347, 63);
+            this.btnAddCAtegory.Location = new System.Drawing.Point(463, 78);
+            this.btnAddCAtegory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddCAtegory.Name = "btnAddCAtegory";
-            this.btnAddCAtegory.Size = new System.Drawing.Size(152, 23);
+            this.btnAddCAtegory.Size = new System.Drawing.Size(203, 28);
             this.btnAddCAtegory.TabIndex = 15;
             this.btnAddCAtegory.Text = "Добавить категорию";
             this.btnAddCAtegory.UseVisualStyleBackColor = false;
@@ -69,18 +71,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(18, 41);
+            this.label2.Location = new System.Drawing.Point(24, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 18);
+            this.label2.Size = new System.Drawing.Size(167, 22);
             this.label2.TabIndex = 14;
             this.label2.Text = "Название категории";
             // 
             // tbNameCategory
             // 
             this.tbNameCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbNameCategory.Location = new System.Drawing.Point(21, 63);
+            this.tbNameCategory.Location = new System.Drawing.Point(28, 78);
+            this.tbNameCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNameCategory.Name = "tbNameCategory";
-            this.tbNameCategory.Size = new System.Drawing.Size(287, 25);
+            this.tbNameCategory.Size = new System.Drawing.Size(381, 29);
             this.tbNameCategory.TabIndex = 13;
             // 
             // dataGridCategories
@@ -90,29 +94,32 @@
             this.dataGridCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridCategories.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridCategories.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCategories.Location = new System.Drawing.Point(12, 114);
+            this.dataGridCategories.Location = new System.Drawing.Point(16, 140);
+            this.dataGridCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridCategories.MultiSelect = false;
             this.dataGridCategories.Name = "dataGridCategories";
             this.dataGridCategories.ReadOnly = true;
             this.dataGridCategories.RowHeadersWidth = 51;
-            this.dataGridCategories.Size = new System.Drawing.Size(960, 490);
+            this.dataGridCategories.Size = new System.Drawing.Size(1280, 603);
             this.dataGridCategories.TabIndex = 12;
             this.dataGridCategories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCategories_CellClick);
             // 
             // FormCategories
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 623);
+            this.ClientSize = new System.Drawing.Size(1312, 767);
             this.Controls.Add(this.btnDeleteCategory);
             this.Controls.Add(this.btnAddCAtegory);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNameCategory);
             this.Controls.Add(this.dataGridCategories);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCategories";
             this.Text = "Категории";
             this.Load += new System.EventHandler(this.FormCategories_Load);

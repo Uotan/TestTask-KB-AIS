@@ -33,9 +33,9 @@ namespace TestTask.Forms
         {
             _authorsList = _providerSQL.GetAuthors();
             dataGridAuthor.DataSource = _authorsList;
-            dataGridAuthor.RowTemplate.Height = 30;
-            dataGridAuthor.AutoResizeColumns();
-            dataGridAuthor.AutoResizeRows();
+            //dataGridAuthor.RowTemplate.Height = 30;
+            //dataGridAuthor.AutoResizeColumns();
+            //dataGridAuthor.AutoResizeRows();
 
         }
 

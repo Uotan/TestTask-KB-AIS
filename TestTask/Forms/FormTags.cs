@@ -33,9 +33,9 @@ namespace TestTask.Forms
         {
             _tagsList = _providerSQL.GetTags();
             dataGridTags.DataSource = _tagsList;
-            dataGridTags.RowTemplate.Height = 30;
-            dataGridTags.AutoResizeColumns();
-            dataGridTags.AutoResizeRows();
+            //dataGridTags.RowTemplate.Height = 30;
+            //dataGridTags.AutoResizeColumns();
+            //dataGridTags.AutoResizeRows();
 
         }
 
