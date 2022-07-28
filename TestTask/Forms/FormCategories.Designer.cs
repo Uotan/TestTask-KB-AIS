@@ -44,7 +44,7 @@
             this.btnDeleteCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeleteCategory.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnDeleteCategory.Location = new System.Drawing.Point(700, 78);
-            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(203, 28);
             this.btnDeleteCategory.TabIndex = 18;
@@ -59,7 +59,7 @@
             this.btnAddCAtegory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddCAtegory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddCAtegory.Location = new System.Drawing.Point(463, 78);
-            this.btnAddCAtegory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCAtegory.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCAtegory.Name = "btnAddCAtegory";
             this.btnAddCAtegory.Size = new System.Drawing.Size(203, 28);
             this.btnAddCAtegory.TabIndex = 15;
@@ -82,7 +82,7 @@
             // 
             this.tbNameCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbNameCategory.Location = new System.Drawing.Point(28, 78);
-            this.tbNameCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNameCategory.Margin = new System.Windows.Forms.Padding(4);
             this.tbNameCategory.Name = "tbNameCategory";
             this.tbNameCategory.Size = new System.Drawing.Size(381, 29);
             this.tbNameCategory.TabIndex = 13;
@@ -99,12 +99,12 @@
             this.dataGridCategories.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCategories.Location = new System.Drawing.Point(16, 140);
-            this.dataGridCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridCategories.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridCategories.MultiSelect = false;
             this.dataGridCategories.Name = "dataGridCategories";
             this.dataGridCategories.ReadOnly = true;
             this.dataGridCategories.RowHeadersWidth = 51;
-            this.dataGridCategories.Size = new System.Drawing.Size(1280, 603);
+            this.dataGridCategories.Size = new System.Drawing.Size(1474, 599);
             this.dataGridCategories.TabIndex = 12;
             this.dataGridCategories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCategories_CellClick);
             // 
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 767);
+            this.ClientSize = new System.Drawing.Size(1506, 763);
             this.Controls.Add(this.btnDeleteCategory);
             this.Controls.Add(this.btnAddCAtegory);
             this.Controls.Add(this.label2);

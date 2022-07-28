@@ -24,7 +24,10 @@ namespace TestTask.Forms
         List<Book> _listBooks;
         Book currentSelectedBook;
         string selectedBookId;
-        string pickedImagePath = null;
+
+        string _selectedImageFile = null;
+        string _selectedNewImageFile = null;
+        bool isEditMode = false;
 
 
         public FormBooks()
@@ -97,9 +100,6 @@ namespace TestTask.Forms
         {
             _listBooks = _providerBooks.GetBooks();
             dataGridBooks.DataSource = _listBooks;
-            //dataGridBooks.RowTemplate.Height = 100;
-            //dataGridBooks.AutoResizeColumns();
-            //dataGridBooks.AutoResizeRows();
         }
 
 
@@ -128,14 +128,24 @@ namespace TestTask.Forms
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
 
-            pickedImagePath = openFileDialog1.FileName;
+            if (!isEditMode)
+            {
+                _selectedImageFile = openFileDialog1.FileName;
 
-            pictbxBookImage.Image = Image.FromFile(pickedImagePath);
+                pictbxBookImage.Image = Image.FromFile(_selectedImageFile);
+            }
+            else
+            {
+                _selectedNewImageFile = openFileDialog1.FileName;
+
+                pictbxBookImage.Image = Image.FromFile(_selectedNewImageFile);
+            }
         }
 
         private void btnClearSelectedImage_Click(object sender, EventArgs e)
         {
-            pickedImagePath = null;
+            _selectedImageFile = null;
+            _selectedNewImageFile = null;
             pictbxBookImage.Image = null;
         }
 
@@ -153,9 +163,9 @@ namespace TestTask.Forms
             object _insertedBookId = _providerBooks.AddBook(tbNameBook.Text, _pickedAuthor.Id, _pickedShelf.Id);
             MessageBox.Show($"Идентификатор добавленного объекта {_insertedBookId}");
 
-            if (!String.IsNullOrEmpty(pickedImagePath))
+            if (!String.IsNullOrEmpty(_selectedImageFile))
             {
-                Image imageFile = Image.FromFile(pickedImagePath);
+                Image imageFile = Image.FromFile(_selectedImageFile);
                 Bitmap bitmap = ImageResizer.ResizeImage(imageFile, 82, 128);
                 bitmap.Save(@"data\books_img\book_" + _insertedBookId.ToString() + ".jpg");
 
@@ -163,7 +173,7 @@ namespace TestTask.Forms
             }
 
 
-            pickedImagePath = null;
+            _selectedImageFile = null;
             pictbxBookImage.Image = null;
             tbNameBook.Text = null;
 
@@ -174,6 +184,8 @@ namespace TestTask.Forms
         {
             try
             {
+                btnAddBook.Enabled = false;
+
                 //btnSelectImage.Enabled = false;
                 //btnClearSelectedImage.Enabled = false;
 
@@ -184,17 +196,113 @@ namespace TestTask.Forms
 
                 selectedBookId = selectedRow.Cells[0].Value.ToString();
 
-                Book _selectedBookObject = _providerBooks.GetBook(selectedBookId);
-                //labelNumberOfYears.Text = (DateTime.Now.Year - _seaderRegDate.Year).ToString() + " лет(года)";
+                currentSelectedBook = _providerBooks.GetBook(selectedBookId);
+                tbNameBook.Text = currentSelectedBook.Name;
 
-                cmbxAuthors.SelectedItem = cmbxAuthors.Items.Cast<Author>().Where(i => i.Name == _selectedBookObject.Author).Single();
-                Author _pickedAuthor = (Author)cmbxAuthors.SelectedItem;
-                MessageBox.Show(_pickedAuthor.Id);
+                cmbxAuthors.SelectedItem = cmbxAuthors.Items.Cast<Author>().Where(i => i.Name == currentSelectedBook.Author).Single();
+                cmbxShelves.SelectedItem = cmbxShelves.Items.Cast<Shelf>().Where(i => i.Name == currentSelectedBook.Shelf).Single();
+
+                if (String.IsNullOrEmpty(currentSelectedBook.ImagePath))
+                {
+                    pictbxBookImage.Image = null;
+                    _selectedImageFile = null;
+                }
+                else
+                {
+                    _selectedImageFile = currentSelectedBook.ImagePath;
+                    
+                    pictbxBookImage.Image = Image.FromFile(currentSelectedBook.ImagePath);
+                }
+                isEditMode = true;
+
+                //cmbxAuthors.SelectedItem = cmbxAuthors.Items.Cast<Author>().Where(i => i.Name == _selectedBookObject.Author).Single();
+                //Author _pickedAuthor = (Author)cmbxAuthors.SelectedItem;
+                //MessageBox.Show(_pickedAuthor.Id);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSaveEdits_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(currentSelectedBook.Id))
+            {
+                Author _pickedAuthor = (Author)cmbxAuthors.SelectedItem;
+                Shelf _pickedShelf = (Shelf)cmbxShelves.SelectedItem;
+                _providerBooks.UpdateBookData(currentSelectedBook.Id, tbNameBook.Text, _pickedAuthor.Id,_pickedShelf.Id);
+            }
+            if (!String.IsNullOrEmpty(_selectedNewImageFile)&& !String.IsNullOrEmpty(currentSelectedBook.Id))
+            {
+                //pictbxBookImage.Image = null;
+                //_readersList.Clear();
+                //dataGridReaders.DataSource = null;
+
+                Image _imageFile = Image.FromFile(_selectedNewImageFile);
+                Bitmap bitmap = ImageResizer.ResizeImage(_imageFile, 82, 128);
+
+                bitmap.Save(@"data\books_img\book_" + currentSelectedBook.Id + "_" + DateTime.Now.ToString("dd/MM/yy_H.mm.ss") + ".jpg");
+
+                _providerBooks.UpdateBookImage(currentSelectedBook.Id, "data\\books_img\\book_" + currentSelectedBook.Id + "_" + DateTime.Now.ToString("dd/MM/yy_H.mm.ss") + ".jpg");
+            }
+
+
+
+
+            ClearFields();
+
+            ShowData();
+        }
+
+        void ClearFields()
+        {
+            currentSelectedBook=null;
+
+            isEditMode = false;
+            _selectedNewImageFile = null;
+
+
+            //_selectedReaderId = null;
+            _selectedImageFile = null;
+
+            btnSelectImage.Enabled = true;
+            btnClearSelectedImage.Enabled = true;
+
+            btnAddBook.Enabled = true;
+            tbNameBook.Text = null;
+            pictbxBookImage.Image = null;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void btnDeleteBook_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "Удалить выбранную книгу?",
+        "Внимание",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning,
+        MessageBoxDefaultButton.Button1);
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+            try
+            {
+                _providerBooks.DeleteBook(selectedBookId);
+                ClearFields();
+                ShowData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

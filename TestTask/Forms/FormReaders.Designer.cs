@@ -63,12 +63,12 @@
             this.dataGridReaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReaders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReaders.Location = new System.Drawing.Point(16, 379);
-            this.dataGridReaders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridReaders.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridReaders.MultiSelect = false;
             this.dataGridReaders.Name = "dataGridReaders";
             this.dataGridReaders.ReadOnly = true;
             this.dataGridReaders.RowHeadersWidth = 51;
-            this.dataGridReaders.Size = new System.Drawing.Size(1280, 373);
+            this.dataGridReaders.Size = new System.Drawing.Size(1474, 369);
             this.dataGridReaders.TabIndex = 0;
             this.dataGridReaders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridReaders_CellClick);
             // 
@@ -76,7 +76,7 @@
             // 
             this.dateBirthPicker.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateBirthPicker.Location = new System.Drawing.Point(28, 158);
-            this.dateBirthPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateBirthPicker.Margin = new System.Windows.Forms.Padding(4);
             this.dateBirthPicker.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateBirthPicker.Name = "dateBirthPicker";
             this.dateBirthPicker.Size = new System.Drawing.Size(381, 29);
@@ -86,7 +86,7 @@
             // 
             this.tbNameReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbNameReader.Location = new System.Drawing.Point(28, 86);
-            this.tbNameReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNameReader.Margin = new System.Windows.Forms.Padding(4);
             this.tbNameReader.Name = "tbNameReader";
             this.tbNameReader.Size = new System.Drawing.Size(381, 29);
             this.tbNameReader.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             this.btnSelectImage.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSelectImage.Location = new System.Drawing.Point(464, 220);
-            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new System.Drawing.Size(200, 28);
             this.btnSelectImage.TabIndex = 3;
@@ -107,7 +107,7 @@
             // 
             this.pictBoxNewReaderImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictBoxNewReaderImage.Location = new System.Drawing.Point(464, 28);
-            this.pictBoxNewReaderImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictBoxNewReaderImage.Margin = new System.Windows.Forms.Padding(4);
             this.pictBoxNewReaderImage.Name = "pictBoxNewReaderImage";
             this.pictBoxNewReaderImage.Size = new System.Drawing.Size(199, 184);
             this.pictBoxNewReaderImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,7 +147,7 @@
             this.btnAddReader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddReader.Location = new System.Drawing.Point(699, 33);
-            this.btnAddReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddReader.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddReader.Name = "btnAddReader";
             this.btnAddReader.Size = new System.Drawing.Size(203, 28);
             this.btnAddReader.TabIndex = 7;
@@ -159,7 +159,7 @@
             // 
             this.btnClearSelectedImage.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClearSelectedImage.Location = new System.Drawing.Point(464, 256);
-            this.btnClearSelectedImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClearSelectedImage.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearSelectedImage.Name = "btnClearSelectedImage";
             this.btnClearSelectedImage.Size = new System.Drawing.Size(200, 28);
             this.btnClearSelectedImage.TabIndex = 8;
@@ -174,7 +174,7 @@
             this.btnSaveEdits.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSaveEdits.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSaveEdits.Location = new System.Drawing.Point(699, 69);
-            this.btnSaveEdits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveEdits.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveEdits.Name = "btnSaveEdits";
             this.btnSaveEdits.Size = new System.Drawing.Size(203, 28);
             this.btnSaveEdits.TabIndex = 9;
@@ -190,7 +190,7 @@
             this.button2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button2.Location = new System.Drawing.Point(699, 146);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(203, 28);
             this.button2.TabIndex = 10;
@@ -206,7 +206,7 @@
             this.btnDeleteReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeleteReader.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnDeleteReader.Location = new System.Drawing.Point(699, 182);
-            this.btnDeleteReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteReader.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteReader.Name = "btnDeleteReader";
             this.btnDeleteReader.Size = new System.Drawing.Size(203, 28);
             this.btnDeleteReader.TabIndex = 11;
@@ -239,7 +239,7 @@
             // 
             this.tbFilterReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbFilterReader.Location = new System.Drawing.Point(209, 338);
-            this.tbFilterReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbFilterReader.Margin = new System.Windows.Forms.Padding(4);
             this.tbFilterReader.Name = "tbFilterReader";
             this.tbFilterReader.Size = new System.Drawing.Size(381, 29);
             this.tbFilterReader.TabIndex = 13;
@@ -260,7 +260,7 @@
             // 
             this.tbFilterByID.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbFilterByID.Location = new System.Drawing.Point(17, 338);
-            this.tbFilterByID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbFilterByID.Margin = new System.Windows.Forms.Padding(4);
             this.tbFilterByID.MaxLength = 5;
             this.tbFilterByID.Name = "tbFilterByID";
             this.tbFilterByID.Size = new System.Drawing.Size(164, 29);
@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 767);
+            this.ClientSize = new System.Drawing.Size(1506, 763);
             this.Controls.Add(this.labelNumberOfYears);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbFilterByID);

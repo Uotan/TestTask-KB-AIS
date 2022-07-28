@@ -14,7 +14,7 @@ namespace TestTask.Models
         public string Name { get; set; }
         public string Author { get; set; }
         public string Shelf { get; set; }
-        public string Reader { get; set; }
+        public string ReaderID { get; set; }
         //public string Categories { get; set; }
         //public string Tags { get; set; }
         private string imagePathString { get; set; }

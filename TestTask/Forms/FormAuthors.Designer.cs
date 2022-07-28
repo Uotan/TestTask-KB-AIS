@@ -44,7 +44,7 @@
             this.btnDeleteAuthor.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeleteAuthor.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnDeleteAuthor.Location = new System.Drawing.Point(700, 64);
-            this.btnDeleteAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteAuthor.Name = "btnDeleteAuthor";
             this.btnDeleteAuthor.Size = new System.Drawing.Size(203, 28);
             this.btnDeleteAuthor.TabIndex = 23;
@@ -59,7 +59,7 @@
             this.btnAddAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddAuthor.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddAuthor.Location = new System.Drawing.Point(463, 64);
-            this.btnAddAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAuthor.Name = "btnAddAuthor";
             this.btnAddAuthor.Size = new System.Drawing.Size(203, 28);
             this.btnAddAuthor.TabIndex = 22;
@@ -82,7 +82,7 @@
             // 
             this.tbNameAuthor.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbNameAuthor.Location = new System.Drawing.Point(28, 64);
-            this.tbNameAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNameAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.tbNameAuthor.Name = "tbNameAuthor";
             this.tbNameAuthor.Size = new System.Drawing.Size(381, 29);
             this.tbNameAuthor.TabIndex = 20;
@@ -99,12 +99,12 @@
             this.dataGridAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridAuthor.Location = new System.Drawing.Point(16, 127);
-            this.dataGridAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridAuthor.MultiSelect = false;
             this.dataGridAuthor.Name = "dataGridAuthor";
             this.dataGridAuthor.ReadOnly = true;
             this.dataGridAuthor.RowHeadersWidth = 51;
-            this.dataGridAuthor.Size = new System.Drawing.Size(1280, 603);
+            this.dataGridAuthor.Size = new System.Drawing.Size(1474, 599);
             this.dataGridAuthor.TabIndex = 19;
             this.dataGridAuthor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAuthor_CellClick);
             // 
@@ -112,14 +112,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 767);
+            this.ClientSize = new System.Drawing.Size(1506, 763);
             this.Controls.Add(this.btnDeleteAuthor);
             this.Controls.Add(this.btnAddAuthor);
             this.Controls.Add(this.labelTagName);
             this.Controls.Add(this.tbNameAuthor);
             this.Controls.Add(this.dataGridAuthor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAuthors";
             this.Text = "Авторы";
             this.Load += new System.EventHandler(this.FormTags_Load);

@@ -104,7 +104,7 @@
             this.dataGridTags.Name = "dataGridTags";
             this.dataGridTags.ReadOnly = true;
             this.dataGridTags.RowHeadersWidth = 51;
-            this.dataGridTags.Size = new System.Drawing.Size(1280, 603);
+            this.dataGridTags.Size = new System.Drawing.Size(1474, 599);
             this.dataGridTags.TabIndex = 19;
             this.dataGridTags.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTags_CellClick);
             // 
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 767);
+            this.ClientSize = new System.Drawing.Size(1506, 763);
             this.Controls.Add(this.btnDeleteTag);
             this.Controls.Add(this.btnAddTag);
             this.Controls.Add(this.labelTagName);

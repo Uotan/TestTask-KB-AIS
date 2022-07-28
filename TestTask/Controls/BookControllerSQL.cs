@@ -46,7 +46,7 @@ namespace TestTask.Controls
                         book.Name = readerSQL.GetValue(1).ToString();
                         book.Author = readerSQL.GetValue(2).ToString();
                         book.Shelf = readerSQL.GetValue(3).ToString();
-                        book.Reader = readerSQL.GetValue(4).ToString();
+                        book.ReaderID = readerSQL.GetValue(4).ToString();
                         book.ImagePath = readerSQL.GetValue(5).ToString();
                         _booksList.Add(book);
                     }
@@ -91,7 +91,7 @@ namespace TestTask.Controls
                         _book.Name = readerSQL.GetValue(1).ToString();
                         _book.Author = readerSQL.GetValue(2).ToString();
                         _book.Shelf = readerSQL.GetValue(3).ToString();
-                        _book.Reader = readerSQL.GetValue(4).ToString();
+                        _book.ReaderID = readerSQL.GetValue(4).ToString();
                         _book.ImagePath = readerSQL.GetValue(5).ToString();
                     }
                 }
@@ -159,10 +159,42 @@ namespace TestTask.Controls
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = _connection;
 
-            command.CommandText = "DELETE FROM readers where id=@id";
+            command.CommandText = "DELETE FROM book where id=@id";
 
             SQLiteParameter idParam = new SQLiteParameter("@id", _id);
             command.Parameters.Add(idParam);
+
+            _connection.Open();
+
+            command.ExecuteNonQuery();
+
+            _connection.Close();
+        }
+
+
+        public void UpdateBookData(string _idBook, string _name, string _authorId, string _shelfId)
+        {
+            var _connection = new SQLiteConnection("DataSource=" + _path);
+
+
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = _connection;
+
+            command.CommandText = "UPDATE book SET name=@nameBook, author_id=@authorId,shelf_id=@shelfId WHERE id=@idBook";
+
+            
+
+            SQLiteParameter idBookParam = new SQLiteParameter("@idBook", _idBook);
+            command.Parameters.Add(idBookParam);
+
+            SQLiteParameter bookNameParam = new SQLiteParameter("@nameBook", _name);
+            command.Parameters.Add(bookNameParam);
+
+            SQLiteParameter authorIdentifierParam = new SQLiteParameter("@authorId", _authorId);
+            command.Parameters.Add(authorIdentifierParam);
+
+            SQLiteParameter shelfIdentifierParam = new SQLiteParameter("@shelfId", _shelfId);
+            command.Parameters.Add(shelfIdentifierParam);
 
             _connection.Open();
 

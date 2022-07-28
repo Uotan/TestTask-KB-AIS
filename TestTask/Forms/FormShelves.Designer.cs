@@ -104,7 +104,7 @@
             this.dataGridShelves.Name = "dataGridShelves";
             this.dataGridShelves.ReadOnly = true;
             this.dataGridShelves.RowHeadersWidth = 51;
-            this.dataGridShelves.Size = new System.Drawing.Size(1280, 603);
+            this.dataGridShelves.Size = new System.Drawing.Size(1474, 599);
             this.dataGridShelves.TabIndex = 19;
             this.dataGridShelves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridShelves_CellClick);
             // 
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 767);
+            this.ClientSize = new System.Drawing.Size(1506, 763);
             this.Controls.Add(this.btnDeleteShelf);
             this.Controls.Add(this.btnAddShelf);
             this.Controls.Add(this.labelTagName);

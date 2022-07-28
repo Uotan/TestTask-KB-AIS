@@ -72,13 +72,14 @@
             this.btnDeleteBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeleteBook.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeleteBook.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDeleteBook.Location = new System.Drawing.Point(883, 196);
+            this.btnDeleteBook.Location = new System.Drawing.Point(1177, 241);
+            this.btnDeleteBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteBook.Name = "btnDeleteBook";
-            this.btnDeleteBook.Size = new System.Drawing.Size(152, 23);
+            this.btnDeleteBook.Size = new System.Drawing.Size(203, 28);
             this.btnDeleteBook.TabIndex = 29;
             this.btnDeleteBook.Text = "Удалить книгу";
             this.btnDeleteBook.UseVisualStyleBackColor = false;
-            this.btnDeleteBook.Visible = false;
+            this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
             // 
             // btnReset
             // 
@@ -87,12 +88,14 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReset.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnReset.Location = new System.Drawing.Point(883, 167);
+            this.btnReset.Location = new System.Drawing.Point(1177, 206);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(152, 23);
+            this.btnReset.Size = new System.Drawing.Size(203, 28);
             this.btnReset.TabIndex = 28;
             this.btnReset.Text = "Сбросить";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSaveEdits
             // 
@@ -100,20 +103,22 @@
             this.btnSaveEdits.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveEdits.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSaveEdits.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSaveEdits.Location = new System.Drawing.Point(883, 104);
+            this.btnSaveEdits.Location = new System.Drawing.Point(1177, 128);
+            this.btnSaveEdits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaveEdits.Name = "btnSaveEdits";
-            this.btnSaveEdits.Size = new System.Drawing.Size(152, 23);
+            this.btnSaveEdits.Size = new System.Drawing.Size(203, 28);
             this.btnSaveEdits.TabIndex = 27;
             this.btnSaveEdits.Text = "Сохранить изменения";
             this.btnSaveEdits.UseVisualStyleBackColor = false;
-            this.btnSaveEdits.Visible = false;
+            this.btnSaveEdits.Click += new System.EventHandler(this.btnSaveEdits_Click);
             // 
             // btnClearSelectedImage
             // 
             this.btnClearSelectedImage.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClearSelectedImage.Location = new System.Drawing.Point(695, 236);
+            this.btnClearSelectedImage.Location = new System.Drawing.Point(927, 290);
+            this.btnClearSelectedImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClearSelectedImage.Name = "btnClearSelectedImage";
-            this.btnClearSelectedImage.Size = new System.Drawing.Size(150, 23);
+            this.btnClearSelectedImage.Size = new System.Drawing.Size(200, 28);
             this.btnClearSelectedImage.TabIndex = 26;
             this.btnClearSelectedImage.Text = "Очистить";
             this.btnClearSelectedImage.UseVisualStyleBackColor = true;
@@ -125,9 +130,10 @@
             this.btnAddBook.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddBook.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddBook.Location = new System.Drawing.Point(883, 75);
+            this.btnAddBook.Location = new System.Drawing.Point(1177, 92);
+            this.btnAddBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(152, 23);
+            this.btnAddBook.Size = new System.Drawing.Size(203, 28);
             this.btnAddBook.TabIndex = 25;
             this.btnAddBook.Text = "Добавить книгу";
             this.btnAddBook.UseVisualStyleBackColor = false;
@@ -138,18 +144,20 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(5, 29);
+            this.label1.Location = new System.Drawing.Point(7, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 18);
+            this.label1.Size = new System.Drawing.Size(133, 22);
             this.label1.TabIndex = 23;
             this.label1.Text = "Название книги";
             // 
             // pictbxBookImage
             // 
             this.pictbxBookImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictbxBookImage.Location = new System.Drawing.Point(719, 37);
+            this.pictbxBookImage.Location = new System.Drawing.Point(959, 46);
+            this.pictbxBookImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictbxBookImage.Name = "pictbxBookImage";
-            this.pictbxBookImage.Size = new System.Drawing.Size(96, 163);
+            this.pictbxBookImage.Size = new System.Drawing.Size(127, 200);
             this.pictbxBookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictbxBookImage.TabIndex = 22;
             this.pictbxBookImage.TabStop = false;
@@ -157,9 +165,10 @@
             // btnSelectImage
             // 
             this.btnSelectImage.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSelectImage.Location = new System.Drawing.Point(695, 206);
+            this.btnSelectImage.Location = new System.Drawing.Point(927, 254);
+            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelectImage.Name = "btnSelectImage";
-            this.btnSelectImage.Size = new System.Drawing.Size(150, 23);
+            this.btnSelectImage.Size = new System.Drawing.Size(200, 28);
             this.btnSelectImage.TabIndex = 21;
             this.btnSelectImage.Text = "Выбрать изображение";
             this.btnSelectImage.UseVisualStyleBackColor = true;
@@ -168,9 +177,10 @@
             // tbNameBook
             // 
             this.tbNameBook.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbNameBook.Location = new System.Drawing.Point(8, 51);
+            this.tbNameBook.Location = new System.Drawing.Point(11, 63);
+            this.tbNameBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNameBook.Name = "tbNameBook";
-            this.tbNameBook.Size = new System.Drawing.Size(253, 25);
+            this.tbNameBook.Size = new System.Drawing.Size(336, 29);
             this.tbNameBook.TabIndex = 20;
             // 
             // dataGridBooks
@@ -184,12 +194,13 @@
             this.dataGridBooks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridBooks.Location = new System.Drawing.Point(14, 366);
+            this.dataGridBooks.Location = new System.Drawing.Point(19, 450);
+            this.dataGridBooks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridBooks.MultiSelect = false;
             this.dataGridBooks.Name = "dataGridBooks";
             this.dataGridBooks.ReadOnly = true;
             this.dataGridBooks.RowHeadersWidth = 51;
-            this.dataGridBooks.Size = new System.Drawing.Size(1029, 240);
+            this.dataGridBooks.Size = new System.Drawing.Size(1474, 291);
             this.dataGridBooks.TabIndex = 18;
             this.dataGridBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBooks_CellClick);
             // 
@@ -199,10 +210,10 @@
             this.cmbxAuthors.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbxAuthors.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbxAuthors.FormattingEnabled = true;
-            this.cmbxAuthors.Location = new System.Drawing.Point(8, 136);
-            this.cmbxAuthors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxAuthors.Location = new System.Drawing.Point(11, 167);
+            this.cmbxAuthors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxAuthors.Name = "cmbxAuthors";
-            this.cmbxAuthors.Size = new System.Drawing.Size(253, 25);
+            this.cmbxAuthors.Size = new System.Drawing.Size(336, 30);
             this.cmbxAuthors.TabIndex = 30;
             // 
             // label2
@@ -210,9 +221,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(5, 116);
+            this.label2.Location = new System.Drawing.Point(7, 143);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 18);
+            this.label2.Size = new System.Drawing.Size(55, 22);
             this.label2.TabIndex = 31;
             this.label2.Text = "Автор";
             // 
@@ -221,9 +233,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(5, 197);
+            this.label3.Location = new System.Drawing.Point(7, 242);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 18);
+            this.label3.Size = new System.Drawing.Size(57, 22);
             this.label3.TabIndex = 33;
             this.label3.Text = "Полка";
             // 
@@ -233,21 +246,21 @@
             this.cmbxShelves.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbxShelves.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbxShelves.FormattingEnabled = true;
-            this.cmbxShelves.Location = new System.Drawing.Point(8, 218);
-            this.cmbxShelves.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxShelves.Location = new System.Drawing.Point(11, 268);
+            this.cmbxShelves.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxShelves.Name = "cmbxShelves";
-            this.cmbxShelves.Size = new System.Drawing.Size(254, 25);
+            this.cmbxShelves.Size = new System.Drawing.Size(337, 30);
             this.cmbxShelves.TabIndex = 32;
             // 
             // lstbxPickedCategies
             // 
             this.lstbxPickedCategies.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lstbxPickedCategies.FormattingEnabled = true;
-            this.lstbxPickedCategies.ItemHeight = 17;
-            this.lstbxPickedCategies.Location = new System.Drawing.Point(12, 102);
-            this.lstbxPickedCategies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstbxPickedCategies.ItemHeight = 22;
+            this.lstbxPickedCategies.Location = new System.Drawing.Point(16, 126);
+            this.lstbxPickedCategies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstbxPickedCategies.Name = "lstbxPickedCategies";
-            this.lstbxPickedCategies.Size = new System.Drawing.Size(160, 140);
+            this.lstbxPickedCategies.Size = new System.Drawing.Size(212, 158);
             this.lstbxPickedCategies.TabIndex = 34;
             // 
             // label4
@@ -255,9 +268,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(9, 10);
+            this.label4.Location = new System.Drawing.Point(12, 12);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 18);
+            this.label4.Size = new System.Drawing.Size(90, 22);
             this.label4.TabIndex = 35;
             this.label4.Text = "Категории";
             // 
@@ -267,10 +281,10 @@
             this.cmbxCategories.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbxCategories.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbxCategories.FormattingEnabled = true;
-            this.cmbxCategories.Location = new System.Drawing.Point(12, 32);
-            this.cmbxCategories.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxCategories.Location = new System.Drawing.Point(16, 39);
+            this.cmbxCategories.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxCategories.Name = "cmbxCategories";
-            this.cmbxCategories.Size = new System.Drawing.Size(160, 25);
+            this.cmbxCategories.Size = new System.Drawing.Size(212, 30);
             this.cmbxCategories.TabIndex = 36;
             // 
             // panel1
@@ -282,10 +296,10 @@
             this.panel1.Controls.Add(this.cmbxShelves);
             this.panel1.Controls.Add(this.tbNameBook);
             this.panel1.Controls.Add(this.cmbxAuthors);
-            this.panel1.Location = new System.Drawing.Point(9, 14);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(12, 17);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 292);
+            this.panel1.Size = new System.Drawing.Size(379, 359);
             this.panel1.TabIndex = 37;
             // 
             // panel2
@@ -301,10 +315,10 @@
             this.panel2.Controls.Add(this.cmbxCategories);
             this.panel2.Controls.Add(this.lstbxPickedCategies);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(309, 14);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(412, 17);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(370, 292);
+            this.panel2.Size = new System.Drawing.Size(493, 359);
             this.panel2.TabIndex = 38;
             // 
             // btnDeleteTag
@@ -314,9 +328,10 @@
             this.btnDeleteTag.Enabled = false;
             this.btnDeleteTag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeleteTag.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDeleteTag.Location = new System.Drawing.Point(196, 254);
+            this.btnDeleteTag.Location = new System.Drawing.Point(261, 313);
+            this.btnDeleteTag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteTag.Name = "btnDeleteTag";
-            this.btnDeleteTag.Size = new System.Drawing.Size(159, 23);
+            this.btnDeleteTag.Size = new System.Drawing.Size(212, 28);
             this.btnDeleteTag.TabIndex = 42;
             this.btnDeleteTag.Text = "Убрать тэг";
             this.btnDeleteTag.UseVisualStyleBackColor = false;
@@ -328,9 +343,10 @@
             this.btnDeleteCategory.Enabled = false;
             this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeleteCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDeleteCategory.Location = new System.Drawing.Point(12, 254);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(16, 313);
+            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(159, 23);
+            this.btnDeleteCategory.Size = new System.Drawing.Size(212, 28);
             this.btnDeleteCategory.TabIndex = 41;
             this.btnDeleteCategory.Text = "Убрать категорию";
             this.btnDeleteCategory.UseVisualStyleBackColor = false;
@@ -342,9 +358,10 @@
             this.btnCreateTag.Enabled = false;
             this.btnCreateTag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreateTag.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCreateTag.Location = new System.Drawing.Point(196, 62);
+            this.btnCreateTag.Location = new System.Drawing.Point(261, 76);
+            this.btnCreateTag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateTag.Name = "btnCreateTag";
-            this.btnCreateTag.Size = new System.Drawing.Size(159, 23);
+            this.btnCreateTag.Size = new System.Drawing.Size(212, 28);
             this.btnCreateTag.TabIndex = 40;
             this.btnCreateTag.Text = "Создать тэг";
             this.btnCreateTag.UseVisualStyleBackColor = false;
@@ -357,9 +374,10 @@
             this.btnCreateCategory.Enabled = false;
             this.btnCreateCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreateCategory.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCreateCategory.Location = new System.Drawing.Point(12, 62);
+            this.btnCreateCategory.Location = new System.Drawing.Point(16, 76);
+            this.btnCreateCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateCategory.Name = "btnCreateCategory";
-            this.btnCreateCategory.Size = new System.Drawing.Size(159, 23);
+            this.btnCreateCategory.Size = new System.Drawing.Size(212, 28);
             this.btnCreateCategory.TabIndex = 39;
             this.btnCreateCategory.Text = "Создать категорию";
             this.btnCreateCategory.UseVisualStyleBackColor = false;
@@ -371,21 +389,21 @@
             this.cmbxTags.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbxTags.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbxTags.FormattingEnabled = true;
-            this.cmbxTags.Location = new System.Drawing.Point(196, 32);
-            this.cmbxTags.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxTags.Location = new System.Drawing.Point(261, 39);
+            this.cmbxTags.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxTags.Name = "cmbxTags";
-            this.cmbxTags.Size = new System.Drawing.Size(160, 25);
+            this.cmbxTags.Size = new System.Drawing.Size(212, 30);
             this.cmbxTags.TabIndex = 39;
             // 
             // lstbxPickedTags
             // 
             this.lstbxPickedTags.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lstbxPickedTags.FormattingEnabled = true;
-            this.lstbxPickedTags.ItemHeight = 17;
-            this.lstbxPickedTags.Location = new System.Drawing.Point(196, 102);
-            this.lstbxPickedTags.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstbxPickedTags.ItemHeight = 22;
+            this.lstbxPickedTags.Location = new System.Drawing.Point(261, 126);
+            this.lstbxPickedTags.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstbxPickedTags.Name = "lstbxPickedTags";
-            this.lstbxPickedTags.Size = new System.Drawing.Size(160, 140);
+            this.lstbxPickedTags.Size = new System.Drawing.Size(212, 158);
             this.lstbxPickedTags.TabIndex = 37;
             // 
             // label5
@@ -393,9 +411,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(194, 10);
+            this.label5.Location = new System.Drawing.Point(259, 12);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 18);
+            this.label5.Size = new System.Drawing.Size(32, 22);
             this.label5.TabIndex = 38;
             this.label5.Text = "Тэг";
             // 
@@ -403,37 +422,41 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(14, 315);
+            this.label6.Location = new System.Drawing.Point(19, 388);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 18);
+            this.label6.Size = new System.Drawing.Size(108, 22);
             this.label6.TabIndex = 42;
             this.label6.Text = "Фильтр по ID";
             // 
             // tbFilterByID
             // 
             this.tbFilterByID.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbFilterByID.Location = new System.Drawing.Point(17, 336);
+            this.tbFilterByID.Location = new System.Drawing.Point(23, 414);
+            this.tbFilterByID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbFilterByID.MaxLength = 5;
             this.tbFilterByID.Name = "tbFilterByID";
-            this.tbFilterByID.Size = new System.Drawing.Size(79, 25);
+            this.tbFilterByID.Size = new System.Drawing.Size(104, 29);
             this.tbFilterByID.TabIndex = 41;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(119, 315);
+            this.label7.Location = new System.Drawing.Point(159, 388);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 18);
+            this.label7.Size = new System.Drawing.Size(170, 22);
             this.label7.TabIndex = 40;
             this.label7.Text = "Фильтр по названию";
             // 
             // tbFilterReader
             // 
             this.tbFilterReader.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbFilterReader.Location = new System.Drawing.Point(122, 336);
+            this.tbFilterReader.Location = new System.Drawing.Point(163, 414);
+            this.tbFilterReader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbFilterReader.Name = "tbFilterReader";
-            this.tbFilterReader.Size = new System.Drawing.Size(287, 25);
+            this.tbFilterReader.Size = new System.Drawing.Size(381, 29);
             this.tbFilterReader.TabIndex = 39;
             // 
             // openFileDialog1
@@ -443,9 +466,9 @@
             // 
             // FormBooks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 623);
+            this.ClientSize = new System.Drawing.Size(1506, 763);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbFilterByID);
             this.Controls.Add(this.label7);
@@ -461,6 +484,7 @@
             this.Controls.Add(this.dataGridBooks);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormBooks";
             this.Text = "Книги";
             this.Load += new System.EventHandler(this.FormBooks_Load);

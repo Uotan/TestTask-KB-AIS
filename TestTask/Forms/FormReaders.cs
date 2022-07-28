@@ -48,9 +48,6 @@ namespace TestTask.Forms
             {
                 _readersList = _providerSQL.GetReaders(_readerPartOfName);
                 dataGridReaders.DataSource = _readersList;
-                //dataGridReaders.RowTemplate.Height = 100;
-                //dataGridReaders.AutoResizeColumns();
-                //dataGridReaders.AutoResizeRows();
             }
             
         }
@@ -159,10 +156,11 @@ namespace TestTask.Forms
                 else
                 {
                     _selectedImageFile = _currentReader.ImagePath;
-                    isEditMode = true;
+                    
                     pictBoxNewReaderImage.Image = Image.FromFile(_currentReader.ImagePath);
                 }
-                
+                isEditMode = true;
+
             }
             catch (Exception ex)
             {
@@ -212,12 +210,13 @@ namespace TestTask.Forms
                 return;
             }
             _providerSQL.DeleteReader(_selectedReaderId);
+            ClearFields();
             ShowReaders(null, null);
         }
 
         
 
-        private async void btnSaveEdits_Click(object sender, EventArgs e)
+        private void btnSaveEdits_Click(object sender, EventArgs e)
         {
             
             if (!String.IsNullOrEmpty(_selectedReaderId))
@@ -230,16 +229,12 @@ namespace TestTask.Forms
                 _readersList.Clear();
                 dataGridReaders.DataSource = null;
 
-                await Task.Delay(200);
-
                 Image imageFile = Image.FromFile(_selectedNewImageFile);
                 Bitmap bitmap = ImageResizer.ResizeImage(imageFile, 128, 128);
-                Debug.WriteLine(_selectedReaderId.ToString());
-                Debug.WriteLine(_selectedNewImageFile);
-                //File.Delete("data\\readers_img\\reader_" + _selectedReaderId + ".jpg");
-                bitmap.Save(@"data\readers_img\reader_" + _selectedReaderId.ToString() + "(1).jpg");
 
-                _providerSQL.UpdateReaderImage(_selectedReaderId.ToString(), "data\\readers_img\\reader_" + _selectedReaderId + "(1).jpg");
+                bitmap.Save(@"data\readers_img\reader_" + _selectedReaderId.ToString()+"_"+DateTime.Now.ToString("dd/MM/yy_H.mm.ss") + ".jpg");
+
+                _providerSQL.UpdateReaderImage(_selectedReaderId.ToString(), "data\\readers_img\\reader_" + _selectedReaderId + "_" + DateTime.Now.ToString("dd/MM/yy_H.mm.ss") + ".jpg");
             }
 
             
