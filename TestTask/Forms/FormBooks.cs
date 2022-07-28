@@ -304,5 +304,23 @@ namespace TestTask.Forms
             }
             
         }
+
+        private void tbFilterByID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbFilterReader_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbFilterByID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,8 +11,8 @@ namespace UnitTestProject
     public class UnitTest1
     {
         //Указываем путь к локальной базе
-        //string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
-        string _sqlBasePath = @"C:\Projects\TestTask-KB-AIS\TestTask\bin\Debug\data\data.db";
+        string _sqlBasePath = @"A:\Projects\TestTask\TestTask\bin\Debug\data\data.db";
+        //string _sqlBasePath = @"C:\Projects\TestTask-KB-AIS\TestTask\bin\Debug\data\data.db";
 
 
         [TestMethod]
@@ -145,6 +145,19 @@ namespace UnitTestProject
             //порядок
             BookControllerSQL sQLiteController = new BookControllerSQL(_sqlBasePath);
             sQLiteController.UpdateBookData("8","zxc","3","3");
+        }
+
+        [TestMethod]
+        public void TestGetJournalEntries()
+        {
+            //порядок
+            JournalControllerSQL sQLiteController = new JournalControllerSQL(_sqlBasePath);
+            List<JournalEntry> journalEntries = sQLiteController.GetJournalEntries();
+            foreach (var item in journalEntries)
+            {
+                Console.WriteLine(item.Id + " "+item.BookId+" "+item.ReaderID+" "+item.DateStart.ToString()+" "
+                    +item.DateEnd.ToString()+" "+item.Returned);
+            }
         }
     }
 }

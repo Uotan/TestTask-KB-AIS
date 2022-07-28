@@ -123,6 +123,7 @@
     <Compile Include="Controls\AuthorControllerSQL.cs" />
     <Compile Include="Controls\CategoriesControllerSQL.cs" />
     <Compile Include="Controls\ImageResizer.cs" />
+    <Compile Include="Controls\JournalControllerSQL.cs" />
     <Compile Include="Controls\ReaderControllerSQL.cs" />
     <Compile Include="Controls\ShelfControllerSQL.cs" />
     <Compile Include="Controls\TagControllerSQL.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryTpBook.cs" />
+    <Compile Include="Models\JournalEntry.cs" />
     <Compile Include="Models\Reader.cs" />
     <Compile Include="Models\Shelf.cs" />
     <Compile Include="Models\Tag.cs" />
