@@ -17,5 +17,10 @@ namespace TestTask.Forms
         {
             InitializeComponent();
         }
+
+        private void FormJournal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
