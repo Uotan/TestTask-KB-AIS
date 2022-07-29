@@ -202,5 +202,119 @@ namespace TestTask.Controls
 
             _connection.Close();
         }
+
+
+
+        public void UpdateBookReader(int _id, string _newReaderId)
+        {
+            //if (_newReaderId==0)
+            //{
+            //    _newReaderId = null;
+            //}
+
+            var _connection = new SQLiteConnection("DataSource=" + _path);
+
+
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = _connection;
+
+            command.CommandText = "UPDATE book SET reader_id=@readerId WHERE id=@id";
+
+            SQLiteParameter idParam = new SQLiteParameter("@id", _id);
+            command.Parameters.Add(idParam);
+
+            SQLiteParameter newReaderIDParam = new SQLiteParameter("@readerId", _newReaderId);
+            command.Parameters.Add(newReaderIDParam);
+
+            _connection.Open();
+
+            command.ExecuteNonQuery();
+
+            _connection.Close();
+        }
+
+
+        public List<Book> GetBooksById(string _bookID)
+        {
+
+
+            var _connection = new SQLiteConnection("DataSource=" + _path);
+
+
+            List<Book> _booksList = new List<Book>();
+
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = _connection;
+
+            command.CommandText = "Select book.id,book.name, authors.name,shelves.name,book.reader_id, book.image_path From book " +
+                "INNER Join authors on authors.id = book.author_id " +
+                "INNER Join shelves on shelves.id = book.shelf_id where book.id LIKE \'%" + _bookID + "%\'";
+
+
+            _connection.Open();
+
+            using (SQLiteDataReader readerSQL = command.ExecuteReader())
+            {
+                if (readerSQL.HasRows)
+                {
+                    while (readerSQL.Read())
+                    {
+                        Book book = new Book();
+                        book.Id = readerSQL.GetValue(0).ToString();
+                        book.Name = readerSQL.GetValue(1).ToString();
+                        book.Author = readerSQL.GetValue(2).ToString();
+                        book.Shelf = readerSQL.GetValue(3).ToString();
+                        book.ReaderID = readerSQL.GetValue(4).ToString();
+                        book.ImagePath = readerSQL.GetValue(5).ToString();
+                        _booksList.Add(book);
+                    }
+                }
+            }
+
+            _connection.Close();
+            return _booksList;
+        }
+
+
+        public List<Book> GetBooksByName(string _bookName)
+        {
+
+
+            var _connection = new SQLiteConnection("DataSource=" + _path);
+
+
+            List<Book> _booksList = new List<Book>();
+
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = _connection;
+
+            command.CommandText = "Select book.id,book.name, authors.name,shelves.name,book.reader_id, book.image_path From book " +
+                "INNER Join authors on authors.id = book.author_id " +
+                "INNER Join shelves on shelves.id = book.shelf_id where book.name LIKE \'%" + _bookName + "%\'";
+
+
+            _connection.Open();
+
+            using (SQLiteDataReader readerSQL = command.ExecuteReader())
+            {
+                if (readerSQL.HasRows)
+                {
+                    while (readerSQL.Read())
+                    {
+                        Book book = new Book();
+                        book.Id = readerSQL.GetValue(0).ToString();
+                        book.Name = readerSQL.GetValue(1).ToString();
+                        book.Author = readerSQL.GetValue(2).ToString();
+                        book.Shelf = readerSQL.GetValue(3).ToString();
+                        book.ReaderID = readerSQL.GetValue(4).ToString();
+                        book.ImagePath = readerSQL.GetValue(5).ToString();
+                        _booksList.Add(book);
+                    }
+                }
+            }
+
+            _connection.Close();
+            return _booksList;
+        }
     }
 }

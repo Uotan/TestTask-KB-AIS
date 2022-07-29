@@ -17,12 +17,14 @@ namespace TestTask.Forms
     {
         List<JournalEntry> journalEntries = new List<JournalEntry>();
         JournalControllerSQL providerJournal;
+        BookControllerSQL providerBook;
 
         JournalEntry selectedJournalEntry = null;
         public FormJournal()
         {
             InitializeComponent();
             providerJournal = new JournalControllerSQL(@"data\data.db");
+            providerBook = new BookControllerSQL(@"data\data.db");
         }
 
         private void FormJournal_Load(object sender, EventArgs e)
@@ -101,6 +103,10 @@ namespace TestTask.Forms
             {
                 object selectedEntryId = providerJournal.AddEntry(tbBookID.Text, tbReaderID.Text, dateTimerStart.Value.ToString(), dateTimerEnd.Value.ToString(), chckbxReturned.Checked.ToString());
                 MessageBox.Show($"Идентификатор добавленного объекта {selectedEntryId}");
+                if (chckbxReturned.Checked==false)
+                {
+                    providerBook.UpdateBookReader(Convert.ToInt32(tbBookID.Text),tbReaderID.Text);
+                }
                 ShowData();
             }
             catch (Exception ex)
@@ -125,7 +131,61 @@ namespace TestTask.Forms
         private void btnSaveEntry_Click(object sender, EventArgs e)
         {
             providerJournal.UpdateEntry(tbEntryID.Text,tbBookID.Text, tbReaderID.Text, dateTimerStart.Value.ToString(), dateTimerEnd.Value.ToString(), chckbxReturned.Checked.ToString());
+            if (chckbxReturned.Checked == false)
+            {
+                providerBook.UpdateBookReader(Convert.ToInt32(tbBookID.Text), tbReaderID.Text);
+            }
+            else
+            {
+                providerBook.UpdateBookReader(Convert.ToInt32(tbBookID.Text), null);
+            }
             ShowData();
+        }
+
+        private void tbFilterByBookId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbFilterByReaderId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbFilterByBookId_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbFilterByBookId.Text)&&String.IsNullOrEmpty(tbFilterByReaderId.Text))
+            {
+                ShowData();
+            }
+            else
+            {
+                tbFilterByReaderId.Text = null;
+                journalEntries.Clear();
+                journalEntries = providerJournal.GetJournalEntriesByBookID(tbFilterByBookId.Text);
+                dataGridJournalEntries.DataSource = journalEntries;
+            }
+        }
+
+        private void tbFilterByReaderId_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbFilterByBookId.Text) && String.IsNullOrEmpty(tbFilterByReaderId.Text))
+            {
+                ShowData();
+            }
+            else
+            {
+                tbFilterByBookId.Text = null;
+                journalEntries.Clear();
+                journalEntries = providerJournal.GetJournalEntriesByReaderID(tbFilterByReaderId.Text);
+                dataGridJournalEntries.DataSource = journalEntries;
+            }
         }
     }
 }

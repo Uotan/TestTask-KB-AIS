@@ -176,5 +176,91 @@ namespace TestTask.Controls
             _connection.Close();
 
         }
+
+        public List<JournalEntry> GetJournalEntriesByBookID(string _bookId)
+        {
+
+
+            var _connection = new SQLiteConnection("DataSource=" + _path);
+
+
+            List<JournalEntry> _journalEntries = new List<JournalEntry>();
+
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = _connection;
+
+            command.CommandText = "SELECT * From journal where book_id LIKE \'%" + _bookId + "%\'";
+
+            //SQLiteParameter boo = new SQLiteParameter("@book_id", _bookID);
+            //command.Parameters.Add(bookIdentifierParam);
+
+
+            _connection.Open();
+
+            using (SQLiteDataReader readerSQL = command.ExecuteReader())
+            {
+                if (readerSQL.HasRows)
+                {
+                    while (readerSQL.Read())
+                    {
+                        JournalEntry _entry = new JournalEntry();
+                        _entry.Id = Convert.ToInt32(readerSQL.GetValue(0));
+                        _entry.BookId = Convert.ToInt32(readerSQL.GetValue(1));
+                        _entry.ReaderID = Convert.ToInt32(readerSQL.GetValue(2));
+                        _entry.DateStart = DateTime.Parse(readerSQL.GetValue(3).ToString());
+                        _entry.DateEnd = DateTime.Parse(readerSQL.GetValue(4).ToString());
+                        _entry.Returned = bool.Parse(readerSQL.GetValue(5).ToString());
+                        _journalEntries.Add(_entry);
+                    }
+                }
+            }
+
+
+            _connection.Close();
+            return _journalEntries;
+        }
+
+        public List<JournalEntry> GetJournalEntriesByReaderID(string _readerId)
+        {
+
+
+            var _connection = new SQLiteConnection("DataSource=" + _path);
+
+
+            List<JournalEntry> _journalEntries = new List<JournalEntry>();
+
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = _connection;
+
+            command.CommandText = "SELECT * From journal where reader_id LIKE \'%" + _readerId + "%\'";
+
+            //SQLiteParameter boo = new SQLiteParameter("@book_id", _bookID);
+            //command.Parameters.Add(bookIdentifierParam);
+
+
+            _connection.Open();
+
+            using (SQLiteDataReader readerSQL = command.ExecuteReader())
+            {
+                if (readerSQL.HasRows)
+                {
+                    while (readerSQL.Read())
+                    {
+                        JournalEntry _entry = new JournalEntry();
+                        _entry.Id = Convert.ToInt32(readerSQL.GetValue(0));
+                        _entry.BookId = Convert.ToInt32(readerSQL.GetValue(1));
+                        _entry.ReaderID = Convert.ToInt32(readerSQL.GetValue(2));
+                        _entry.DateStart = DateTime.Parse(readerSQL.GetValue(3).ToString());
+                        _entry.DateEnd = DateTime.Parse(readerSQL.GetValue(4).ToString());
+                        _entry.Returned = bool.Parse(readerSQL.GetValue(5).ToString());
+                        _journalEntries.Add(_entry);
+                    }
+                }
+            }
+
+
+            _connection.Close();
+            return _journalEntries;
+        }
     }
 }

@@ -313,14 +313,35 @@ namespace TestTask.Forms
             }
         }
 
-        private void tbFilterReader_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void tbFilterByID_TextChanged(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(tbFilterByID.Text) && String.IsNullOrEmpty(tbFilterName.Text))
+            {
+                ShowData();
+            }
+            else
+            {
+                tbFilterName.Text = null;
+                _listBooks.Clear();
+                _listBooks = _providerBooks.GetBooksById(tbFilterByID.Text);
+                dataGridBooks.DataSource = _listBooks;
+            }
+        }
 
+        private void tbFilterName_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbFilterByID.Text) && String.IsNullOrEmpty(tbFilterName.Text))
+            {
+                ShowData();
+            }
+            else
+            {
+                tbFilterByID.Text = null;
+                _listBooks.Clear();
+                _listBooks = _providerBooks.GetBooksByName(tbFilterName.Text);
+                dataGridBooks.DataSource = _listBooks;
+            }
         }
     }
 }
